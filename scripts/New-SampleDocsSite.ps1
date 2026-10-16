@@ -142,7 +142,8 @@ foreach ($s in $students) {
             throw "$siteUrl is in the tenant recycle bin. Purge it first (Remove-CourseArtifacts.ps1 -TenantLabel B -PurgeDeletedSites)."
         }
         New-PnPSite -Type CommunicationSite -Title ($schema.site.titleFormat -f $ini) -Url $siteUrl `
-            -Owner $InstructorUpn -Lcid $schema.site.lcid -Connection $admin | Out-Null
+            -Owner $InstructorUpn -Lcid $schema.site.lcid `
+            -TimeZone UTCPLUS0100_BELGRADE_BRATISLAVA_BUDAPEST_LJUBLJANA_PRAGUE -Connection $admin | Out-Null
         $ready = $false
         for ($i = 0; $i -lt 40 -and -not $ready; $i++) {
             if (Get-PnPTenantSite -Identity $siteUrl -Connection $admin -ErrorAction SilentlyContinue) { $ready = $true }

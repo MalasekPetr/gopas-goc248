@@ -137,7 +137,9 @@ function Confirm-StudentSite {
 
     $title = $schema.site.titleFormat -f $Ini
     try {
-        New-PnPSite -Type CommunicationSite -Title $title -Url $Url -Owner $OwnerUpn -Lcid $schema.site.lcid -Connection $admin | Out-Null
+        # Time zone matters: IncidentLog.ReportDeadline is computed in the site's time zone (day-1 lab step 2).
+        New-PnPSite -Type CommunicationSite -Title $title -Url $Url -Owner $OwnerUpn -Lcid $schema.site.lcid `
+            -TimeZone UTCPLUS0100_BELGRADE_BRATISLAVA_BUDAPEST_LJUBLJANA_PRAGUE -Connection $admin | Out-Null
     }
     catch {
         throw "Creating $Url failed: $($_.Exception.Message). If a deleted site with this URL is in the tenant recycle bin, purge it first (Remove-CourseArtifacts.ps1 -PurgeDeletedSites) -- the lab forbids a suffixed URL."

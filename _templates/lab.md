@@ -32,9 +32,9 @@ ne „student pochopil">
 
 Do seznamu SoA ve workspace `isms-<ini>` přidej řádky:
 
-| Opatření | Aplikovatelné | Capability M365 | Důkaz |
-|---|---|---|---|
-| A.<x.y> | ano | <…> | <odkaz> |
+| Opatření | Požadavek | Aplikovatelné | Zdůvodnění | Capability M365 | Důkaz | Modul | Tenant |
+|---|---|---|---|---|---|---|---|
+| A.<x.y> nebo kap. <x.y> | vyhl. 410/2025 Sb. § <…> | ano | vlastní věta | <…> | <odkaz do knihovny důkazů> | `<slug>` | A |
 
 **Checkpoint:** v SoA jsou nové řádky s vyplněným sloupcem Důkaz a Modul = `<slug>`.
 

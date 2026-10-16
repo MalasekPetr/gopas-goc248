@@ -40,8 +40,9 @@ sites** -> **Create** -> **Communication site**. Vyber šablonu bez ukázkového
 | Time zone | `(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague` |
 
 Časová zóna není kosmetika: v úterý z ní počítá sloupec **Lhůta prvotního hlášení** v Incident
-logu (24 h od vyhodnocení incidentu). Kdo ji tu přehlédne, opraví ji v nastavení webu ->
-**Regional settings**.
+logu (24 h od vyhodnocení incidentu). Pole a jeho popisek v průvodci jsou neověřené na
+tenantu — když ho průvodce nenabídne nebo ho přehlédneš, nastav zónu po založení v nastavení
+webu -> **Regional settings**.
 
 **Checkpoint:** v Active sites je web `isms-<ini>` s adresou končící přesně `/sites/isms-<ini>`.
 **Negativní:** adresa **nemá** číselnou příponu (např. `isms-<ini>2`) — pokud ano, web nepoužívej

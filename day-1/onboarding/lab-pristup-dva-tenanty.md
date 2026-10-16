@@ -1,6 +1,6 @@
 # Lab · Přístup do dvou tenantů a vlastní scope
 
-> Modul: `onboarding` · Odhad: 35 min · Režim: hands-on, vlastní scope (jen čtení, nic se nenastavuje)
+> Modul: `onboarding` · Odhad: 35 min · Režim: hands-on, vlastní scope (v tenantu se nic nenastavuje; mění se jen hesla a MFA vlastních účtů)
 > Tenant: A `cloudedu.cz` + B `spdemo.online` · Scénář: [`../../scenario-isms-vltava.md`](../../scenario-isms-vltava.md)
 
 ## Cíl
@@ -12,7 +12,8 @@ Tenant A — bez jediné změny v tenantu.
 
 > [!WARNING] V tomto labu nic neukládej
 > Admin centra jen otevíráš a čteš. Žádné tlačítko **Save**, **Create**, **Delete** ani
-> **Enable**. Jsi Global Administrator — každé uložení platí pro celou učebnu.
+> **Enable**. Jsi Global Administrator — každé uložení platí pro celou učebnu. Jediné, co
+> měníš, jsou hesla a MFA vlastních účtů (tvého a `test-<ini>`) na stránkách přihlášení.
 
 ## Předpoklady
 
@@ -145,6 +146,7 @@ V tomto labu **ne** — web `isms-<ini>` a seznam SoA vzniknou v
 
 - [ ] Dva profily Edge `GOC248 A` a `GOC248 B`, každý jiné barvy.
 - [ ] Na obou tenantech je na stránce Security info zaregistrovaný Microsoft Authenticator.
+- [ ] V Authenticatoru jsou i účet `test-<ini>@cloudedu.cz` a jeho nové heslo je jen na lístku.
 - [ ] Na Tenant A máš roli Global Administrator; `isms-<ini>-users` a `test-<ini>` existují.
 - [ ] Na Tenant B se otevře tvůj web `isms-<ini>` a jsi jeho vlastník.
 - [ ] **Negativní:** na Tenant B tě Microsoft 365 admin center nepustí.
