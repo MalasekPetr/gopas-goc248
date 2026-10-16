@@ -64,6 +64,7 @@ zdroje** pro právní fakta. Stálé vyhlášené výjimky:
 | `nukib.gov.cz`, `portal.nukib.gov.cz` | metodiky, podpůrné materiály, hlášení incidentů |
 | `e-sbirka.gov.cz` | znění zákona č. 264/2025 Sb. a prováděcích vyhlášek |
 | `pnp.github.io` | PnP PowerShell — reference příkazů pro skripty |
+| `support.microsoft.com` | uživatelská nápověda Microsoftu (nastavení verzí, Approvals v seznamech) — jen když Learn tvrzení nemá |
 
 Blogy, roadmapy třetích stran a Message Center mirrory **nejsou zdrojem** — smí sloužit jen
 jako stopa, kterou je třeba dohledat na Learn. Když Learn tvrzení nemá, je to otevřená otázka.

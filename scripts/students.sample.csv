@@ -1,0 +1,3 @@
+Initials,UserPrincipalName,TenantBUserPrincipalName
+ab,student.ab@<tenant-a-domain>,user.01@<tenant-b-domain>
+cd,student.cd@<tenant-a-domain>,user.02@<tenant-b-domain>

@@ -1,0 +1,390 @@
+{
+  "_comment": "GOC248 binding schemas. Source of truth: day-1/isms-design-m365/reseni-isms-workspace.md, day-2/document-libraries-governance/reseni-rizena-dokumentace.md, day-2/content-type-hub/README.md, day-2/lists-registers-workflow/reseni-registry-revize.md. Non-ASCII text is stored as \\u escapes so the file stays ASCII.",
+  "site": {
+    "titleFormat": "ISMS {0}",
+    "urlFormat": "isms-{0}",
+    "lcid": 1033
+  },
+  "hubColumns": {
+    "group": "VS ISMS",
+    "fields": [
+      {
+        "name": "DocOwner",
+        "displayName": "Vlastn\u00edk dokumentu",
+        "type": "User"
+      },
+      {
+        "name": "EffectiveDate",
+        "displayName": "Datum \u00fa\u010dinnosti",
+        "type": "DateOnly"
+      },
+      {
+        "name": "DocNextReview",
+        "displayName": "Datum p\u0159\u00ed\u0161t\u00ed revize",
+        "type": "DateOnly"
+      },
+      {
+        "name": "DocClassification",
+        "displayName": "Klasifikace",
+        "type": "Choice",
+        "choices": [
+          "Ve\u0159ejn\u00e9",
+          "Intern\u00ed",
+          "D\u016fv\u011brn\u00e9",
+          "P\u0159\u00edsn\u011b d\u016fv\u011brn\u00e9"
+        ]
+      },
+      {
+        "name": "ParentPolicy",
+        "displayName": "Nad\u0159azen\u00e1 politika",
+        "type": "Text"
+      },
+      {
+        "name": "RecordDate",
+        "displayName": "Datum vzniku z\u00e1znamu",
+        "type": "DateOnly"
+      }
+    ]
+  },
+  "lists": [
+    {
+      "key": "SoA",
+      "day": 1,
+      "template": "GenericList",
+      "createTitle": "SoA",
+      "url": "Lists/SoA",
+      "displayTitle": "SoA",
+      "description": "Prohlaseni o aplikovatelnosti a prehled opatreni - Vltava Servis",
+      "titleDisplayName": "Opat\u0159en\u00ed",
+      "fields": [
+        {
+          "name": "Requirement",
+          "displayName": "Po\u017eadavek",
+          "type": "Text"
+        },
+        {
+          "name": "Applicable",
+          "displayName": "Aplikovateln\u00e9",
+          "type": "Choice",
+          "choices": [
+            "ano",
+            "ne"
+          ]
+        },
+        {
+          "name": "Justification",
+          "displayName": "Zd\u016fvodn\u011bn\u00ed",
+          "type": "Note"
+        },
+        {
+          "name": "Capability",
+          "displayName": "Capability M365",
+          "type": "Text"
+        },
+        {
+          "name": "Evidence",
+          "displayName": "D\u016fkaz",
+          "type": "URL"
+        },
+        {
+          "name": "Module",
+          "displayName": "Modul",
+          "type": "Text"
+        },
+        {
+          "name": "Tenant",
+          "displayName": "Tenant",
+          "type": "Choice",
+          "choices": [
+            "A",
+            "B"
+          ],
+          "default": "A"
+        }
+      ]
+    },
+    {
+      "key": "ControlledDocs",
+      "day": 2,
+      "template": "DocumentLibrary",
+      "createTitle": "ControlledDocs",
+      "url": "ControlledDocs",
+      "displayTitle": "\u0158\u00edzen\u00e1 dokumentace",
+      "fields": []
+    },
+    {
+      "key": "AssetRegister",
+      "day": 2,
+      "template": "GenericList",
+      "createTitle": "AssetRegister",
+      "url": "Lists/AssetRegister",
+      "displayTitle": "Asset Register",
+      "titleDisplayName": "N\u00e1zev",
+      "fields": [
+        {
+          "name": "AssetType",
+          "displayName": "Typ aktiva",
+          "type": "Choice",
+          "choices": [
+            "Informace",
+            "Aplikace",
+            "Slu\u017eba",
+            "Infrastruktura",
+            "Za\u0159\u00edzen\u00ed",
+            "Dodavatel",
+            "Lid\u00e9"
+          ]
+        },
+        {
+          "name": "AssetDescription",
+          "displayName": "Popis",
+          "type": "Note"
+        },
+        {
+          "name": "AssetOwner",
+          "displayName": "Vlastn\u00edk aktiva",
+          "type": "User"
+        },
+        {
+          "name": "AssetLocation",
+          "displayName": "Um\u00edst\u011bn\u00ed",
+          "type": "Text"
+        },
+        {
+          "name": "AssetClassification",
+          "displayName": "Klasifikace",
+          "type": "Choice",
+          "choices": [
+            "Ve\u0159ejn\u00e9",
+            "Intern\u00ed",
+            "D\u016fv\u011brn\u00e9",
+            "P\u0159\u00edsn\u011b d\u016fv\u011brn\u00e9"
+          ]
+        },
+        {
+          "name": "Criticality",
+          "displayName": "Kriti\u010dnost",
+          "type": "Choice",
+          "choices": [
+            "N\u00edzk\u00e1",
+            "St\u0159edn\u00ed",
+            "Vysok\u00e1"
+          ]
+        },
+        {
+          "name": "NextReview",
+          "displayName": "Datum p\u0159\u00ed\u0161t\u00ed revize",
+          "type": "DateOnly"
+        },
+        {
+          "name": "AssetStatus",
+          "displayName": "Stav",
+          "type": "Choice",
+          "choices": [
+            "V provozu",
+            "Pl\u00e1novan\u00e9",
+            "Vy\u0159azen\u00e9"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "RiskRegister",
+      "day": 2,
+      "template": "GenericList",
+      "createTitle": "RiskRegister",
+      "url": "Lists/RiskRegister",
+      "displayTitle": "Risk Register",
+      "titleDisplayName": "N\u00e1zev rizika",
+      "fields": [
+        {
+          "name": "RiskAsset",
+          "displayName": "Aktivum",
+          "type": "Lookup",
+          "lookupList": "Lists/AssetRegister"
+        },
+        {
+          "name": "Threat",
+          "displayName": "Hrozba",
+          "type": "Text"
+        },
+        {
+          "name": "Vulnerability",
+          "displayName": "Zranitelnost",
+          "type": "Text"
+        },
+        {
+          "name": "Likelihood",
+          "displayName": "Pravd\u011bpodobnost",
+          "type": "Number",
+          "min": 1,
+          "max": 5,
+          "decimals": 0
+        },
+        {
+          "name": "Impact",
+          "displayName": "Dopad",
+          "type": "Number",
+          "min": 1,
+          "max": 5,
+          "decimals": 0
+        },
+        {
+          "name": "RiskScore",
+          "displayName": "M\u00edra rizika",
+          "type": "Calculated",
+          "resultType": "Number",
+          "decimals": 0,
+          "formula": "=[Likelihood]*[Impact]",
+          "fieldRefs": [
+            "Likelihood",
+            "Impact"
+          ]
+        },
+        {
+          "name": "RiskOwner",
+          "displayName": "Vlastn\u00edk rizika",
+          "type": "User"
+        },
+        {
+          "name": "Treatment",
+          "displayName": "Zp\u016fsob zvl\u00e1d\u00e1n\u00ed",
+          "type": "Choice",
+          "choices": [
+            "Sn\u00ed\u017eit",
+            "P\u0159ijmout",
+            "Vyhnout se",
+            "Sd\u00edlet"
+          ]
+        },
+        {
+          "name": "TreatmentPlan",
+          "displayName": "Pl\u00e1n zvl\u00e1d\u00e1n\u00ed",
+          "type": "Note"
+        },
+        {
+          "name": "ControlRef",
+          "displayName": "Vazba na opat\u0159en\u00ed",
+          "type": "Text"
+        },
+        {
+          "name": "NextReview",
+          "displayName": "Datum p\u0159\u00ed\u0161t\u00ed revize",
+          "type": "DateOnly"
+        },
+        {
+          "name": "RiskStatus",
+          "displayName": "Stav",
+          "type": "Choice",
+          "choices": [
+            "Identifikov\u00e1no",
+            "V \u0159e\u0161en\u00ed",
+            "P\u0159ijato",
+            "Uzav\u0159eno"
+          ]
+        }
+      ],
+      "views": [
+        {
+          "title": "K revizi",
+          "fields": [
+            "LinkTitle",
+            "RiskAsset",
+            "RiskScore",
+            "RiskOwner",
+            "NextReview",
+            "RiskStatus"
+          ],
+          "query": "<Where><And><Leq><FieldRef Name='NextReview' /><Value Type='DateTime'><Today /></Value></Leq><Neq><FieldRef Name='RiskStatus' /><Value Type='Text'>Uzav\u0159eno</Value></Neq></And></Where><OrderBy><FieldRef Name='RiskScore' Ascending='FALSE' /></OrderBy>"
+        }
+      ]
+    },
+    {
+      "key": "IncidentLog",
+      "day": 2,
+      "template": "GenericList",
+      "createTitle": "IncidentLog",
+      "url": "Lists/IncidentLog",
+      "displayTitle": "Incident log",
+      "titleDisplayName": "N\u00e1zev",
+      "fields": [
+        {
+          "name": "DetectedAt",
+          "displayName": "Zji\u0161t\u011bno",
+          "type": "DateTime"
+        },
+        {
+          "name": "ClassifiedAt",
+          "displayName": "Vyhodnoceno jako incident",
+          "type": "DateTime"
+        },
+        {
+          "name": "ReportDeadline",
+          "displayName": "Lh\u016fta prvotn\u00edho hl\u00e1\u0161en\u00ed",
+          "type": "Calculated",
+          "resultType": "DateTime",
+          "formula": "=[ClassifiedAt]+1",
+          "fieldRefs": [
+            "ClassifiedAt"
+          ]
+        },
+        {
+          "name": "Significant",
+          "displayName": "V\u00fdznamn\u00fd dopad",
+          "type": "Choice",
+          "choices": [
+            "ano",
+            "ne",
+            "posuzuje se"
+          ]
+        },
+        {
+          "name": "SignificanceBasis",
+          "displayName": "Krit\u00e9rium v\u00fdznamnosti",
+          "type": "Note"
+        },
+        {
+          "name": "AffectedAssets",
+          "displayName": "Dot\u010den\u00e1 aktiva",
+          "type": "LookupMulti",
+          "lookupList": "Lists/AssetRegister"
+        },
+        {
+          "name": "Status",
+          "displayName": "Stav",
+          "type": "Choice",
+          "choices": [
+            "Nov\u00fd",
+            "V \u0159e\u0161en\u00ed",
+            "Nahl\u00e1\u0161eno",
+            "Uzav\u0159eno"
+          ]
+        },
+        {
+          "name": "ReportDraft",
+          "displayName": "Podklad pro hl\u00e1\u0161en\u00ed",
+          "type": "URL"
+        },
+        {
+          "name": "Evidence",
+          "displayName": "D\u016fkazy",
+          "type": "Note"
+        }
+      ]
+    }
+  ],
+  "controlledDocs": {
+    "enableVersioning": true,
+    "enableMinorVersions": true,
+    "enableModeration": true,
+    "draftVersionVisibility": "Approver",
+    "forceCheckout": false,
+    "readGroupFormat": "isms-{0}-users",
+    "contributeUserFormat": "test-{0}"
+  },
+  "sampleDocs": {
+    "libraryCreateTitle": "Dokumentace",
+    "libraryUrl": "Dokumentace",
+    "libraryDisplayTitle": "Dokumentace"
+  }
+}

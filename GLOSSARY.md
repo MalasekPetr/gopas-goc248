@@ -14,18 +14,18 @@ Všechny moduly se odkazují sem.
 | Zákon o kybernetické bezpečnosti | zákon č. 264/2025 Sb. | český zákon transponující směrnici NIS2; účinný od 2025-11-01 |
 | Vyhláška o bezpečnostních opatřeních pro režim nižších povinností | vyhláška č. 410/2025 Sb. | obsah a zavádění opatření, významnost dopadu incidentu (§ 14); **režim scénáře Vltava Servis** |
 | Vyhláška o Portálu NÚKIB | vyhláška č. 334/2025 Sb. | forma a způsob hlášení přes Portál NÚKIB |
-| Národní úřad pro kybernetickou a informační bezpečnost | NÚKIB | dozorový orgán, příjemce hlášení incidentů |
+| Národní úřad pro kybernetickou a informační bezpečnost | NÚKIB | dozorový orgán; v režimu nižších povinností se incident hlásí Národnímu CERT (důvodová zpráva k vyhl. č. 410/2025 Sb.), prakticky přes Portál NÚKIB |
 | Režim povinností | vyšší / nižší | rozsah opatření a hlášení; zařazení je látka GOC240 |
-| Prvotní hlášení incidentu | — | bez zbytečného odkladu, **nejpozději do 24 h** od vyhodnocení události jako incidentu ([NÚKIB, podpůrný materiál k hlášení](https://portal.nukib.gov.cz/storage/uploads/2025/10/20/podpurny-material-hlaseni-incidentu_uid_68f623d0afd51.pdf)) |
+| Prvotní hlášení incidentu | — | bez zbytečného odkladu, **nejpozději do 24 h** od vyhodnocení události jako incidentu; v režimu nižších povinností jen incidenty s významným dopadem ([NÚKIB, Hlášení kybernetických bezpečnostních incidentů, v1.2](https://portal.nukib.gov.cz/storage/uploads/2026/06/08/podpurny-material-ke-hlaseni-incidentu_v1-2_uid_6a267e393778b.pdf)); návod NÚKIB pro nižší režim (2026-08) uvádí „od zjištění" — viz `audit-incident-response`. Závěrečná zpráva do 30 dnů od vyřešení |
 | ISO/IEC 27001:2022 | ISO 27001 | norma pro ISMS; kap. 4–10 = požadavky na systém řízení, Annex A = katalog opatření |
 | Annex A — témata | A.5–A.8 | A.5 organizační, A.6 lidská, A.7 fyzická, A.8 technologická opatření |
 | Prohlášení o aplikovatelnosti | SoA | které opatření Annex A se aplikují a proč (kap. 6.1.3); **páteř nosné linky kurzu** |
 | Systém řízení bezpečnosti informací | ISMS | aktiva, rizika, opatření, dokumentace, přezkoumání |
 | Dokumentované informace | — | ISO kap. 7.5 — dokumenty a záznamy pod řízením (verze, schválení, přístup, uchování) |
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-10.
-> Číslo vyhlášky pro režim **vyšších** povinností doplnit z e-Sbírky; kurz s ní nepracuje,
-> ale studenti z regulovaných subjektů v režimu vyšších povinností se na ni zeptají.
+> [!NOTE] Režim vyšších povinností
+> Bezpečnostní opatření pro režim vyšších povinností stanoví vyhláška č. 409/2025 Sb.
+> (NÚKIB, Manuál pro režim nižších povinností v1.1, kap. 3.2). Kurz s ní nepracuje.
 
 > [!IMPORTANT] Nezaměňovat — právní vs. normativní
 > Zákon č. 264/2025 Sb. je **právní povinnost** (dozoruje a sankcionuje NÚKIB). ISO/IEC 27001
@@ -43,8 +43,8 @@ Všechny moduly se odkazují sem.
 | **Purview Records Management** | — | prohlášení záznamu, disposition review | `retention-lifecycle` |
 | **Purview Audit (Standard / Premium)** | Unified Audit Log | auditní záznamy jako zdroj důkazů | `audit-incident-response` |
 | **Purview Data Security Posture Management (DSPM)** | DSPM for AI, Microsoft Purview AI Hub | viditelnost a řízení rizik dat vč. AI | `copilot-governance-dspm` |
-| **Purview Compliance Manager** | — | assessments, improvement actions, compliance score; šablony ISO/IEC 27001:2022 a NIS2 | `compliance-manager-capstone` |
-| **SharePoint Advanced Management (SAM)** | součást SharePoint Premium | governance webů, oversharing, site lifecycle | `document-libraries-governance`, `retention-lifecycle` |
+| **Purview Compliance Manager** | — | assessments, improvement actions, compliance score; šablony ISO/IEC 27001:2022 a NIS2 jsou prémiové (A5/E5/G5: 3 prémiové šablony zdarma); šablona „Act No. 181" je k předchozímu zákonu, ne k 264/2025 Sb. | `compliance-manager-capstone` |
+| **SharePoint Advanced Management (SAM)** | dříve součást SharePoint Premium; dnes s licencí Copilot, add-onem SAM Plan 1 nebo E7 | governance webů, oversharing, site lifecycle | `document-libraries-governance`, `retention-lifecycle` |
 | **Microsoft Entra Conditional Access** | Azure AD Conditional Access | politiky podmíněného přístupu vč. risk-based | `conditional-access` |
 | **Microsoft Entra ID Protection** | Azure AD Identity Protection | detekce rizika uživatele a přihlášení | `conditional-access` |
 | **Microsoft Entra Privileged Identity Management (PIM)** | Azure AD PIM | just-in-time přístup k rolím a skupinám (PIM for Groups) | `privileged-access-pim` |
@@ -55,15 +55,27 @@ Všechny moduly se odkazují sem.
 | **Skills (Copilot in SharePoint)** | — | rozšíření Copilota v SharePointu | `lists-registers-workflow` (Tenant B) |
 
 > [!IMPORTANT] Názvosloví
-> **DSPM for AI -> Data Security Posture Management.** Purview sloučil DSPM a DSPM for AI do
-> jednoho prostředí; původní verze jsou v UI označené „(classic)". Datum vyřazení classic verzí
-> uvádějí zdroje rozporně — ověřit na Learn (ověřovací kolo 2026-12).
+> **DSPM for AI a DSPM -> Data Security Posture Management (DSPM).** Předchozí verze jsou
+> v portálu označené „DSPM for AI (classic)" a „Data Security Posture Management (classic)"
+> ([Learn](https://learn.microsoft.com/en-us/purview/dspm-task-mapping)). Learn k 2026-10-17
+> datum vyřazení classic verzí neuvádí; Message Center uvádí okno 2026-11-30 až 2026-12-31 —
+> ověřit na Learn v ověřovacím kole 2026-12.
+
+> [!IMPORTANT] Názvosloví
+> **Microsoft 365 Copilot -> Microsoft Copilot, Microsoft 365 Copilot Chat -> Microsoft Copilot
+> Chat** ([Learn: enterprise data protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection),
+> ms.date 2026-05-29). V UI, licencích a starší dokumentaci se drží i staré názvy.
 
 > [!IMPORTANT] Názvosloví
 > **Legacy risk politiky ID Protection -> risk-based Conditional Access.** Původní user risk
 > a sign-in risk politiky v ID Protection byly vyřazeny k 2026-10-01; risk se vyhodnocuje dál,
 > ale reaguje na něj jen politika Conditional Access
 > ([Learn: risk policies](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies)).
+
+> [!IMPORTANT] Názvosloví
+> **Parent label / sublabels -> label groups (modern label scheme).** Tenanty založené od
+> 2025-10-01 ho mají automaticky; migrace staršího tenantu je nevratná
+> ([Learn](https://learn.microsoft.com/en-us/purview/migrate-sensitivity-label-scheme)).
 
 > [!IMPORTANT] Nezaměňovat — tři pilíře Purview
 > **Information Protection** (jak je to klasifikované) ≠ **DLP** (co nesmí odejít) ≠
@@ -75,43 +87,52 @@ Všechny moduly se odkazují sem.
 
 ## Normiqa Navigator
 
-**Normiqa Navigator** — agent produktu **Normiqa** (Malach IS), dostupný z Microsoft
-Marketplace. V kurzu jediný jmenovitý produkt Malach IS, a to jako referenční příklad hotového
+**Normiqa Navigator** — agent produktu **Normiqa** (Malach IS), nabízený přes Microsoft
+Marketplace (dostupnost ověřit před každým během). V kurzu jediný jmenovitý produkt Malach IS, a to jako referenční příklad hotového
 agenta v bloku `normiqa-navigator-demo`. Pravidla neutrality v
 [`CONVENTIONS.md`](./CONVENTIONS.md).
 
 ## Licenční realita napříč pilíři
 
-> [!WARNING] Ověřit k datu běhu — stav k 2026-10. Tabulka je NEOVĚŘENÁ.
-> Převzatá z pracovní verze kurzu (2026-07) a dosud neprošla ověřením proti
-> [Microsoft Purview service description](https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description).
-> Každý řádek dostane odkaz v `requirements-mapping-m365`; do té doby se z ní nesmí učit.
+> [!WARNING] Ověřit k datu běhu — stav k 2026-10. Ověřeno 2026-10-17.
+> Zdroje a podrobnosti po řádcích:
+> [`day-1/requirements-mapping-m365/comparison-licence.md`](./day-1/requirements-mapping-m365/comparison-licence.md).
 
-| Pilíř | Business Premium | E3 | E5 / add-on |
+| Pilíř | Business Premium | Microsoft 365 E3 | E5 / add-on |
 |---|---|---|---|
-| Knihovny, verzování, schvalování, Content Type Hub | ano | ano | ano |
+| SharePoint Online (weby, knihovny, seznamy) | ano | ano | ano |
 | Sensitivity labels — ruční | ano | ano | ano |
-| Sensitivity labels — automatické (služba) | ? | ? | E5 / add-on |
-| DLP — SharePoint, OneDrive, Exchange, Teams | ? | ano | ano |
-| DLP — Endpoint | ? | ? | E5 / add-on |
-| Retenční politiky a štítky | ? | ano | ano |
-| Records management, adaptive scopes | ? | ? | E5 / add-on |
-| Audit Standard / Premium | ano / ? | ano / ? | ano / ano |
-| Conditional Access | ano (Entra ID P1) | ano (Entra ID P1) | ano |
-| Risk-based CA, PIM | ne | ne | Entra ID P2 |
-| Compliance Manager — šablony mimo základní | ? | ? | E5 Compliance / add-on |
-| DSPM | ? | ? | ? |
-| Autofill columns | PAYG | PAYG | PAYG |
-| Copilot, Skills, agenti | licence Copilot nebo PAYG | licence Copilot nebo PAYG | licence Copilot nebo PAYG |
+| Sensitivity labels — automatické (klient i služba), výchozí štítek knihovny | ne | ne | E5 / E5 Information Protection and Governance / Purview Suite |
+| DLP — Exchange, SharePoint, OneDrive | ano | ano | ano |
+| DLP — Teams | ne | ne | E5 / E5 IP&G / Purview Suite |
+| DLP — Endpoint | ne | ne | E5 / E5 IP&G / Purview Suite |
+| DLP pro Copilot — blokace zpracování souborů | ne | ne | E5 / E5 IP&G / Purview Suite |
+| Retenční politiky; retenční štítky ruční | ano | ano | ano |
+| Retenční štítky automatické / výchozí, adaptive scopes, records management | ne | ne | E5 / E5 IP&G / Purview Suite |
+| Audit Standard / Premium | ano / add-on¹ | ano / add-on² | ano / ano |
+| Conditional Access | ano (Entra ID P1) | ano (Entra ID P1)³ | ano |
+| Risk-based CA, PIM vč. PIM for Groups | ne (add-on Defender Suite for BP) | ne (Entra ID P2) | ano (Entra ID P2) |
+| Access reviews pro PIM for Groups | ne | ne | Microsoft Entra ID Governance |
+| Compliance Manager — Data Protection Baseline | ano | ano | ano |
+| Compliance Manager — šablony ISO/IEC 27001:2022, NIS2 | koupě | koupě | 3 prémiové zdarma |
+| Activity explorer / Content explorer (UI) | ne | ne (data se sbírají) | E5 |
+| SAM site lifecycle | ne | jen s Copilot / SAM Plan 1 | jen s Copilot / SAM Plan 1 / E7 |
+| DSPM | ? | ? | ? ⁴ |
+| Autofill columns | PAYG; s licencí Copilot součást Copilot in SharePoint | PAYG; dtto | PAYG; dtto |
+| Copilot in SharePoint, Skills | licence Microsoft 365 Copilot | licence Microsoft 365 Copilot | licence Microsoft 365 Copilot |
+| Copilot Chat s agenty, SharePoint agents | licence Copilot nebo PAYG | licence Copilot nebo PAYG | licence Copilot nebo PAYG |
 
+¹ Microsoft Purview Suite for Business Premium (max. 300 míst). ² Microsoft 365 E5 eDiscovery
+& Audit nebo Purview Suite. ³ Platí pro Microsoft 365 E3, ne Office 365 E3 (ta Entra ID P1
+nemá). ⁴ Purview service description (2026-08-03) DSPM samostatně neuvádí.
 `?` = otevřená otázka k ověření, ne „ne".
 
 ### Dva PAYG modely — nezaměňovat
 
 | Model | Co platí | Kde v kurzu |
 |---|---|---|
-| **Document processing PAYG** | Autofill columns a další zpracování dokumentů; $0,005 za stránku ([Learn: Autofill](https://learn.microsoft.com/microsoft-365/syntex/autofill-overview)) | `content-type-hub` (Tenant B) |
-| **Copilot PAYG** | Copilot Chat s agenty, Skills | `lists-registers-workflow`, D5 (Tenant B) |
+| **Document processing PAYG** | Autofill columns a další zpracování dokumentů ([Learn: Autofill](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/autofill-overview)); $0,005 za transakci = stránka Word/PDF/TIFF, list, snímek nebo soubor ([Learn: PAYG pricing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services)) | `content-type-hub` (Tenant B) |
+| **Copilot PAYG** | Copilot Chat s agenty, SharePoint agents, Retrieval API. Skills jen podle go/no-go — Learn uvádí pro Copilot in SharePoint licenci Microsoft 365 Copilot | `lists-registers-workflow`, D5 (Tenant B) |
 
 Obě metriky jdou přes připojenou Azure subscription, ale jsou to dvě různá nastavení
 a dva různé účty v rozpočtu. Cenu ověřit k datu běhu.

@@ -43,7 +43,9 @@ gopas-goc248/
 ├─ self-study.md              # mapování na katalog, co se neodučí
 ├─ _templates/                # module.md, lab.md, instructor-notes.md, day-readme.md
 ├─ day-1/ … day-5/            # obsah po dnech; každý modul = složka se slugem
-└─ scripts/                   # Test-RepoIntegrity
+├─ marketing/                 # rozdíl proti katalogové stránce
+├─ sample-docs/               # fiktivní dokumentace Vltava Servis pro Tenant B
+└─ scripts/                   # příprava a úklid tenantů, build vzorových dokumentů, Test-RepoIntegrity
 ```
 
 Modul obsahuje `README.md` (výklad, student), `lab-*.md` (zadání, student) a
@@ -81,10 +83,15 @@ V pátek z toho vznikne report stavu souladu. Viz
 
 ## Stav
 
-**Kořen repa a osnova (2026-10-17).** Agenda, prostředí, scénář, mapování na katalog,
-šablony a kontrola integrity existují. Obsah dnů (`day-1/` … `day-5/`) se teprve píše —
-surovým materiálem je předchozí pracovní verze kurzu (kostra 16 modulů, stav 2026-07).
-První běh: **leden 2027**.
+**První úplná verze (2026-10-17), čeká na autorskou revizi.** Všech 16 bloků má výklad,
+lab nebo demo, referenční řešení a instructor notes; skripty přípravy a úklidu tenantů
+a vzorová dokumentace Vltava Servis existují. Odkazy na Microsoft Learn a NÚKIB jsou
+ověřené k 2026-10-17. První běh: **leden 2027**.
+
+**Ověřeno z dokumentace, ne na tenantu.** Žádný lab ani skript zatím neproběhl na kurzovních
+tenantech. Každý `instructor-notes.md` označuje kroky „neověřeno na tenantu" — zkušební
+průchod je položka go/no-go v [`environment.md`](environment.md), stejně jako ověřovací
+kolo v prosinci 2026.
 
 Integrita repa se kontroluje skriptem, ne odhadem:
 

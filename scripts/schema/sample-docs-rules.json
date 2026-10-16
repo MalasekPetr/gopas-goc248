@@ -1,0 +1,143 @@
+{
+  "_comment": "Content rules for the built sample documents. Checked by Build-SampleDocs.ps1 after every build. Derived from day-2/content-type-hub/reseni-typy-obsahu-autofill.md, day-2/lists-registers-workflow/reseni-registry-revize.md and day-5/ai-agents-tenant/reseni-lab-compliance-agent.md. Non-ASCII text is stored as \\u escapes.",
+  "expectedCount": 7,
+  "defaultLabels": [
+    "Vlastn\u00edk dokumentu:",
+    "Datum \u00fa\u010dinnosti:",
+    "Datum p\u0159\u00ed\u0161t\u00ed revize:",
+    "Verze:",
+    "Klasifikace:"
+  ],
+  "forbiddenPatterns": [
+    "(?i)\\bplat(u|y|em|ech|\u016f|\u016fm)?\\b",
+    "(?i)\\bplatov",
+    "(?i)\\bmzd",
+    "(?i)\\bmzd[a\u011buy]",
+    "(?i)\\bodm\u011bn"
+  ],
+  "emailPattern": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+",
+  "allowedEmailSuffix": ".example",
+  "documents": [
+    {
+      "prefix": "POL-01",
+      "mustContain": [
+        "Vlastn\u00edk dokumentu: \u0159editel spole\u010dnosti, Ing. Tom\u00e1\u0161 Bure\u0161",
+        "Datum \u00fa\u010dinnosti: 2026-02-01",
+        "Datum p\u0159\u00ed\u0161t\u00ed revize: 2027-02-01",
+        "Klasifikace: Intern\u00ed",
+        "schvaluje jednatel",
+        "jednou ro\u010dn\u011b"
+      ]
+    },
+    {
+      "prefix": "POL-02",
+      "mustContain": [
+        "Vlastn\u00edk dokumentu: vedouc\u00ed IT, Lenka Hor\u00e1kov\u00e1",
+        "Datum \u00fa\u010dinnosti: 2026-03-01",
+        "Datum p\u0159\u00ed\u0161t\u00ed revize: 1. b\u0159ezna 2027",
+        "Klasifikace: D\u016fv\u011brn\u00e9",
+        "90 dn\u00ed",
+        "schvaluje vlastn\u00edk aktiva"
+      ]
+    },
+    {
+      "prefix": "POL-03",
+      "mustContain": [
+        "Vlastn\u00edk dokumentu: mana\u017eer kybernetick\u00e9 bezpe\u010dnosti, Martin S\u00fdkora",
+        "Datum \u00fa\u010dinnosti: 2026-04-15",
+        "Datum p\u0159\u00ed\u0161t\u00ed revize: 2027-04-15",
+        "Klasifikace: Intern\u00ed",
+        "\u010dty\u0159i stupn\u011b",
+        "Smlouvy se z\u00e1kazn\u00edky jsou v\u017edy nejm\u00e9n\u011b D\u016fv\u011brn\u00e9"
+      ],
+      "orderedTerms": [
+        "1. Ve\u0159ejn\u00e9:",
+        "2. Intern\u00ed:",
+        "3. D\u016fv\u011brn\u00e9:",
+        "4. P\u0159\u00edsn\u011b d\u016fv\u011brn\u00e9:"
+      ]
+    },
+    {
+      "prefix": "POL-04",
+      "exactLines": [
+        "Vlastn\u00edk dokumentu: mana\u017eer kybernetick\u00e9 bezpe\u010dnosti"
+      ],
+      "mustContain": [
+        "Datum \u00fa\u010dinnosti: 2026-03-01",
+        "Datum p\u0159\u00ed\u0161t\u00ed revize: 2027-03-01",
+        "Klasifikace: Intern\u00ed",
+        "nejpozd\u011bji do 24 hodin od vyhodnocen\u00ed ud\u00e1losti jako incidentu",
+        "v\u00fdznamn\u00fdm dopadem",
+        "Port\u00e1l N\u00daKIB",
+        "bezpecnost@vltava-servis.example"
+      ],
+      "mustNotContain": [
+        "S\u00fdkora",
+        "Hor\u00e1kov\u00e1",
+        "Bure\u0161",
+        "Mal\u00e1"
+      ]
+    },
+    {
+      "prefix": "SME-01",
+      "mustContain": [
+        "Vlastn\u00edk dokumentu: vedouc\u00ed IT, Lenka Hor\u00e1kov\u00e1",
+        "Datum \u00fa\u010dinnosti: 2026-06-30",
+        "Datum p\u0159\u00ed\u0161t\u00ed revize: 2027-06-30",
+        "Klasifikace: Intern\u00ed",
+        "jednou za \u010dtvrtlet\u00ed",
+        "zapisuje spr\u00e1vce IT"
+      ]
+    },
+    {
+      "prefix": "SME-02",
+      "labels": [
+        "Vlastn\u00edk dokumentu:",
+        "Datum \u00fa\u010dinnosti:",
+        "Verze:",
+        "Klasifikace:"
+      ],
+      "mustContain": [
+        "Vlastn\u00edk dokumentu: mana\u017eer kybernetick\u00e9 bezpe\u010dnosti, Martin S\u00fdkora",
+        "Datum \u00fa\u010dinnosti: 2026-09-01",
+        "Klasifikace: Intern\u00ed",
+        "Revize nejpozd\u011bji 12 m\u011bs\u00edc\u016f od data \u00fa\u010dinnosti.",
+        "Intern\u00ed nebo vy\u0161\u0161\u00ed",
+        "POL-03",
+        "Copilot"
+      ],
+      "mustNotContain": [
+        "Datum p\u0159\u00ed\u0161t\u00ed revize"
+      ]
+    },
+    {
+      "prefix": "ZAZ-01",
+      "labels": [
+        "Zapsala:",
+        "Datum jedn\u00e1n\u00ed:",
+        "Klasifikace:"
+      ],
+      "mustContain": [
+        "Zapsala: asistentka veden\u00ed, Eva Mal\u00e1",
+        "Datum jedn\u00e1n\u00ed: 2026-",
+        "Veden\u00ed schv\u00e1lilo revize politik"
+      ],
+      "mustNotContain": [
+        "Datum \u00fa\u010dinnosti",
+        "Datum p\u0159\u00ed\u0161t\u00ed revize",
+        "Vlastn\u00edk dokumentu",
+        "P\u0159\u00ed\u0161t\u00ed p\u0159ezkoum\u00e1n\u00ed"
+      ],
+      "minMatches": [
+        {
+          "pattern": "Odpov\u00edd\u00e1 \\S+",
+          "count": 3
+        },
+        {
+          "pattern": "term\u00edn \\d{4}-\\d{2}-\\d{2}",
+          "count": 3
+        }
+      ]
+    }
+  ]
+}
