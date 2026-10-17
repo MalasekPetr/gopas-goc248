@@ -105,7 +105,8 @@ Vyplň v šabloně **A3**. Pokud je závěr „incident", zapiš si **teď** ča
 | Důkazy | odkaz na CSV z kroku 5 |
 
 **Checkpoint:** položka existuje a sloupec **Lhůta prvotního hlášení** ukazuje
-`Vyhodnoceno jako incident` + 1 den. Dotčené aktivum je vybrané z Asset Registeru, ne napsané
+`Zjištěno` + 1 den (lhůta běží od zjištění, ne od vyhodnocení). Dotčené aktivum je vybrané
+z Asset Registeru, ne napsané
 textem.
 
 ### 7. Posuď významnost a povinnost hlásit
@@ -142,6 +143,9 @@ Tenant = A):
 | A.8.15 | ano | Purview Audit (Standard / Premium) | odkaz na CSV |
 | A.8.16 | ano | Purview Audit (zpětně); Defender XDR (přehled) | odkaz na podklad (A2: jak byla událost zjištěna) |
 
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný). A.8.16 je `Částečně zavedeno` — průběžné sledování chybí.
+
 **Checkpoint:** v SoA je 6 nových řádků; sloupec Důkaz je u všech **klikatelný odkaz** do
 workspace a Modul = `audit-incident-response`. U A.8.16 Zdůvodnění říká, co chybí (průběžné
 sledování a výstrahy).
@@ -153,7 +157,7 @@ sledování a výstrahy).
 - [ ] Stažení, změna štítku a sdílení dohledané s časy v UTC; u pokusu o smazání zapsaný
       skutečný výsledek.
 - [ ] CSV uložené ve workspace, lokální kopie smazaná.
-- [ ] Položka `<ini>-INC-01` v Incident logu: Zjištěno, Vyhodnoceno, lhůta +1 den, Dotčená
+- [ ] Položka `<ini>-INC-01` v Incident logu: Zjištěno, Vyhodnoceno, lhůta Zjištěno +1 den, Dotčená
       aktiva z lookupu, Důkazy, Podklad pro hlášení.
 - [ ] Podklad: A3–A5 rozhodnuté a zdůvodněné, B2 všech 9 povinných polí.
 - [ ] 6 řádků SoA s důkazem.

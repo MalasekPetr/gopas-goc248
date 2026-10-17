@@ -1,7 +1,7 @@
 # Řešení · Registry, revize a Skill
 
-> Modul: `lists-registers-workflow` · K labům: [`lab-registry-revize.md`](lab-registry-revize.md),
-> [`lab-skill-kontrola-dokumentace.md`](lab-skill-kontrola-dokumentace.md)
+> Modul: `lists-registers-workflow` · K labu a demu: [`lab-registry-revize.md`](lab-registry-revize.md),
+> [`demo-skill-kontrola-dokumentace.md`](demo-skill-kontrola-dokumentace.md)
 > Schémata níže jsou **závazná** — podle nich skript zakládá seznamy pro ty, kdo nestihli,
 > a na Incident log navazuje den 4. Zdůvodnění v SoA je vždy vlastní text studenta.
 
@@ -55,7 +55,7 @@ a do schématu pro skript nepatří.
 | Název | Title | text |
 | Zjištěno | DetectedAt | date+time |
 | Vyhodnoceno jako incident | ClassifiedAt | date+time |
-| Lhůta prvotního hlášení | ReportDeadline | calculated date+time = [ClassifiedAt]+1 |
+| Lhůta prvotního hlášení | ReportDeadline | calculated date+time = [DetectedAt]+1 |
 | Významný dopad | Significant | choice: ano / ne / posuzuje se |
 | Kritérium významnosti | SignificanceBasis | multiline text |
 | Dotčená aktiva | AffectedAssets | lookup (multi) to Asset Register Title |
@@ -63,8 +63,9 @@ a do schématu pro skript nepatří.
 | Podklad pro hlášení | ReportDraft | hyperlink |
 | Důkazy | Evidence | multiline text |
 
-Lhůta +1 den odpovídá prvotnímu hlášení **nejpozději do 24 h od vyhodnocení události jako
-incidentu** (viz [`../../GLOSSARY.md`](../../GLOSSARY.md)). Cvičný záznam
+Lhůta +1 den odpovídá prvotnímu hlášení **nejpozději do 24 h od zjištění incidentu** (pravidlo
+kurzu, viz [`../../day-4/audit-incident-response/`](../../day-4/audit-incident-response/)).
+`ClassifiedAt` zůstává: čas posouzení, zda jde o incident a zda má významný dopad. Cvičný záznam
 `CVICENI - ztraceny notebook` má Stav `Uzavřeno`; den 4 ho může ignorovat nebo smazat.
 
 ## Data
@@ -82,10 +83,10 @@ Sloupec **Požadavek** z mapovací matice D1.
 | A.5.9 | ano | Bez seznamu aktiv a jejich vlastníků nelze rizika ani incidenty k ničemu vztáhnout. | Asset Register s vlastníkem, klasifikací, kritičností a datem revize | odkaz na `AssetRegister` | `lists-registers-workflow` | A |
 | kap. 6.1 | ano | Riziko = aktivum × hrozba, míra P × D; nad 12 snižujeme, přijetí zbytkového rizika schvaluje vlastník rizika. | Risk Register + Approvals | odkaz na `RiskRegister` | `lists-registers-workflow` | A |
 | kap. 8.2 | ano | Rizika revidujeme nejméně jednou ročně a při změně; po termínu je vidí zobrazení K revizi. | zobrazení `K revizi` (volitelně týdenní flow) | odkaz na zobrazení `K revizi` | `lists-registers-workflow` | A |
-| A.5.24 | ano | Incident se eviduje s časem vyhodnocení, aby šla hlídat lhůta prvotního hlášení. | Incident log s počítanou lhůtou | odkaz na `IncidentLog` | `lists-registers-workflow` | A |
-| kap. 7.5 | ano | Kontrola náležitostí dokumentů pokaždé stejně; neověřuje správnost obsahu, jen přítomnost údajů. | Skill webu v Copilot in SharePoint | odkaz na `SKILL.md` na Tenant B + screenshot | `lists-registers-workflow` | B |
+| A.5.24 | ano | Incident se eviduje s časem zjištění, aby šla hlídat lhůta prvotního hlášení. | Incident log s počítanou lhůtou | odkaz na `IncidentLog` | `lists-registers-workflow` | A |
+| kap. 7.5 | ano | Kontrola náležitostí dokumentů pokaždé stejně; neověřuje správnost obsahu, jen přítomnost údajů. | Skill webu v Copilot in SharePoint (vyžaduje licenci Microsoft 365 Copilot) | odkaz na lektorův `SKILL.md` na Tenant B + zadání skillu | `lists-registers-workflow` | B |
 
-## Skill — co by měl najít
+## Skill — co by měl najít (demo lektora)
 
 Podle obsahu vzorových dokumentů (zadání v repu), ne podle naměřeného běhu:
 

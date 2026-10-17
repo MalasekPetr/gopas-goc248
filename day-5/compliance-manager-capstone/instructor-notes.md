@@ -12,10 +12,10 @@
 
 ## Go/no-go — otestovat před během
 
-- **Šablona ISO/IEC 27001:2022** na Tenant A: stránka *Regulations*, počítadlo
-  *Free regulation licenses used*. Developer tenant je sdílený s jiným kurzem — sloty mohou
-  být obsazené. Lektor den předem založí `LEKTOR-ISO27001-2022` ve skupině `LEKTOR-ISMS`
-  (aktivuje šablonu a ověří, že assessment jde vytvořit). **Neověřeno na tenantu.**
+- **Šablona ISO/IEC 27001:2022** na Tenant A, T−14 dní: stránka *Regulations*, čítač
+  *Regulation licenses used*. Slot = šablona na tenant, ne assessment; drží se rok. Volné
+  2 sloty = OK, jinak trial (25 šablon / 90 dní, do 48 h). Lektor den předem založí
+  `LEKTOR-ISO27001-2022` ve skupině `LEKTOR-ISMS`. **Neověřeno na tenantu.**
 - **NIS2** jen pokud zbývá další volný slot; jinak studentům NIS2 nezakládat.
 - **Netechnické improvement actions** v šabloně ISO/IEC 27001:2022 existují u kontrol
   doporučených v kroku 2 (A.5.37, A.5.12, A.8.12, A.5.24–A.5.26, A.5.23). Ověřit na
@@ -24,6 +24,8 @@
 - **Fallback Data Protection Baseline** do vlastní skupiny — ověřit, že jde založit bez
   prémiového slotu.
 - **SoA studentů** mají odkazy ve sloupci Důkaz (namátkou 3 studenti ve čtvrtek odpoledne).
+- **Export SoA -> Export to CSV** vrátí statický soubor (ne živé spojení `.iqy`) — jen ten
+  je uchovatelná verze přehledu pro vedení. **Neověřeno na tenantu.**
 
 ## Tripwires
 

@@ -25,8 +25,8 @@
   opatření. Tohle je hlavní pointa bloku; nenechat zapadnout.
 - **Režim vyšších povinností.** Studenti z regulovaných subjektů ve vyšším režimu: vyhláška
   č. 409/2025 Sb., hlásí všechny incidenty se znaky; kurz s ní nepracuje.
-- **„Kdy přesně začíná 24 h?"** Od vyhodnocení události jako incidentu pověřenou osobou — ale
-  vyhodnocení samo má proběhnout co nejrychleji (NÚKIB v1.2). Ne od „zjištění administrátorem".
+- **„Kdy přesně začíná 24 h?"** V kurzu od zjištění (návod NÚKIB pro nižší režim, 2026-08).
+  Materiál v1.2 říká „od vyhodnocení" — kurz drží konzervativnější čtení; právně neřešit.
 - **Citování normy.** Kdo má normu u sebe, nečte z ní nahlas do záznamu — jen čísla opatření.
 - **Certifikát Microsoftu** jako „máme hotovo" — výrok 5 v labu.
 

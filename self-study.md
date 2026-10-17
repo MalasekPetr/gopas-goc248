@@ -19,7 +19,7 @@ Katalog GOC248 má 5 tematických celků a 19 položek bez časových dotací.
 | Lab: knihovna s verzováním a schvalováním | `document-libraries-governance` (D2) | |
 | Content Type Hub, standardizace politik, Autofill columns | `content-type-hub` (D2) | Autofill na Tenant B |
 | Lists: Asset Register, Risk Register, SoA, incident log | `lists-registers-workflow` (D2) | |
-| Lab: Asset a Risk Register s revizním workflow, Copilot Skills | `lists-registers-workflow` (D2) | Skills na Tenant B |
+| Lab: Asset a Risk Register s revizním workflow, Copilot Skills | `lists-registers-workflow` (D2) | Skills jako demo lektora na Tenant B — vyžadují licenci Microsoft 365 Copilot, studentské PAYG účty ji nemají |
 | **Klasifikace a Information Protection** | | |
 | Sensitivity labels: taxonomie, ruční vs. automatické | `sensitivity-labels` (D3) | |
 | Lab: taxonomie a aplikace na ISMS knihovnu | `sensitivity-labels` (D3) | |

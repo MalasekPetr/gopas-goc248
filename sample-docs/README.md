@@ -63,7 +63,7 @@ Odchylky jsou záměrné a testují, zda AI (Autofill, Skill, agent) údaj nedom
 | 1 | POL-01 | schvaluje jednatel společnosti; přezkoumání jednou ročně |
 | 2 | POL-02 | přístup externího dodavatele nejdéle 90 dní; schvaluje vlastník aktiva |
 | 3 | POL-03 | čtyři stupně v pořadí Veřejné, Interní, Důvěrné, Přísně důvěrné |
-| 4 | POL-04 | prvotní hlášení do 24 hodin od vyhodnocení události jako incidentu; jen incidenty s významným dopadem; Portál NÚKIB |
+| 4 | POL-04 | prvotní hlášení nejpozději do 24 hodin od zjištění incidentu; jen incidenty s významným dopadem; Portál NÚKIB |
 | 5 | POL-04 | manažer kybernetické bezpečnosti; `bezpecnost@vltava-servis.example`, linka 2400 |
 | 6 | SME-01 | test obnovy jednou za čtvrtletí; záznam zapisuje správce IT, kontroluje vedoucí IT |
 | 7 | SME-02 + POL-03 | smlouva se zákazníkem je Důvěrné, do veřejného chatbota nikdy; povolen Microsoft 365 Copilot a agenti v tenantu |

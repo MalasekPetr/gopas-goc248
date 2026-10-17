@@ -40,7 +40,7 @@ sites** -> **Create** -> **Communication site**. Vyber šablonu bez ukázkového
 | Time zone | `(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague` |
 
 Časová zóna není kosmetika: v úterý z ní počítá sloupec **Lhůta prvotního hlášení** v Incident
-logu (24 h od vyhodnocení incidentu). Pole a jeho popisek v průvodci jsou neověřené na
+logu (24 h od zjištění incidentu). Pole a jeho popisek v průvodci jsou neověřené na
 tenantu — když ho průvodce nenabídne nebo ho přehlédneš, nastav zónu po založení v nastavení
 webu -> **Regional settings**.
 
@@ -79,7 +79,7 @@ V seznamu SoA: záhlaví sloupce **Title** -> **Column settings** -> **Rename** 
 **Checkpoint:** záhlaví zní **Opatření**. V **List settings** (ozubené kolo) -> klik na sloupec
 Opatření: adresa stránky obsahuje `Field=Title`.
 
-### 7. Založ sedm sloupců s ASCII názvy
+### 7. Založ jedenáct sloupců s ASCII názvy
 
 V seznamu **+ Add column** -> typ -> do pole **Name** napiš přesně interní název (bez mezer,
 bez diakritiky). Pořadí a typy:
@@ -93,8 +93,14 @@ bez diakritiky). Pořadí a typy:
 | `Evidence` | Hyperlink | — |
 | `Module` | Single line of text | — |
 | `Tenant` | Choice | volby `A`, `B`; výchozí `A` |
+| `ImplementationStatus` | Choice | volby `Zavedeno`, `Částečně zavedeno`, `Plánováno`, `Nezavedeno`; bez výchozí hodnoty |
+| `Priority` | Choice | volby `Vysoká`, `Střední`, `Nízká`; bez výchozí hodnoty |
+| `DueDate` | Date and time | Include time: **No** |
+| `ResponsiblePerson` | Person | jedna osoba (bez více hodnot) |
 
-**Checkpoint:** v List settings -> Columns je osm sloupců (Opatření + sedm). Klik na
+Volby u choice sloupců smí mít diakritiku — ASCII musí být jen pole **Name**.
+
+**Checkpoint:** v List settings -> Columns je dvanáct sloupců (Opatření + jedenáct). Klik na
 `Requirement` -> adresa obsahuje `Field=Requirement`.
 
 ### 8. Přejmenuj sloupce na české zobrazované názvy
@@ -110,6 +116,10 @@ Pro každý sloupec **Column settings** -> **Edit** -> Name:
 | `Evidence` | Důkaz |
 | `Module` | Modul |
 | `Tenant` | Tenant (beze změny) |
+| `ImplementationStatus` | Stav zavedení |
+| `Priority` | Priorita |
+| `DueDate` | Termín |
+| `ResponsiblePerson` | Odpovědná osoba |
 
 **Checkpoint:** záhlaví jsou česky. V List settings klik na **Požadavek** -> adresa pořád
 obsahuje `Field=Requirement`; totéž **Důkaz** -> `Field=Evidence`. **Negativní:** u žádného
@@ -144,24 +154,27 @@ Do seznamu SoA přidej dva řádky:
 | Opatření | Požadavek | Aplikovatelné | Zdůvodnění | Capability M365 | Důkaz | Modul | Tenant |
 |---|---|---|---|---|---|---|---|
 | A.5.31 | vyhl. 410/2025 Sb. § 3 odst. 2, příloha č. 1 | ano | Požadavky zákona a vyhlášky pro režim nižších povinností jsou identifikované a namapované na opatření a capabilities. | mapovací matice v knihovně webu | adresa sešitu z kroku 9 | `requirements-mapping-m365` | A |
-| kap. 6.1.3 | vyhl. 410/2025 Sb. § 3 odst. 2, příloha č. 1 | ano | SoA je základ přehledu bezpečnostních opatření; chybí stav, termín, priorita a odpovědnost podle přílohy č. 1. | seznam SoA na webu `isms-<ini>` | adresa seznamu SoA | `isms-design-m365` | A |
+| kap. 6.1.3 | vyhl. 410/2025 Sb. § 3 odst. 2, příloha č. 1 | ano | Jeden seznam slouží jako SoA i jako přehled bezpečnostních opatření; stav, priorita, termín a odpovědná osoba podle přílohy č. 1 jsou samostatné sloupce. | seznam SoA na webu `isms-<ini>` | adresa seznamu SoA | `isms-design-m365` | A |
 
-Zdůvodnění piš vlastními slovy; tabulka je vzor.
+Zdůvodnění piš vlastními slovy; tabulka je vzor. Vyplň i Stav zavedení, Prioritu, Termín
+a Odpovědnou osobu: u obou řádků Stav zavedení `Zavedeno`, Odpovědná osoba ty, Termín
+prázdný (u zavedených opatření se nevyplňuje).
 
 **Checkpoint:** v SoA jsou dva řádky, oba s vyplněným sloupcem Důkaz (odkaz se po kliknutí
-otevře) a Modul = slug bloku.
+otevře), Modul = slug bloku a Stav zavedení `Zavedeno`.
 
 ## Ověření
 
 - [ ] Web `/sites/isms-<ini>` (komunikační, English), vlastník ty, adresa bez číselné přípony.
 - [ ] **Negativní:** nevznikla skupina Microsoft 365 `isms-<ini>`.
 - [ ] `isms-<ini>-users` je ve skupině Members; Owners beze změny.
-- [ ] Seznam `/Lists/SoA` s osmi sloupci; interní názvy `Title`, `Requirement`, `Applicable`,
-      `Justification`, `Capability`, `Evidence`, `Module`, `Tenant`.
+- [ ] Seznam `/Lists/SoA` s dvanácti sloupci; interní názvy `Title`, `Requirement`, `Applicable`,
+      `Justification`, `Capability`, `Evidence`, `Module`, `Tenant`, `ImplementationStatus`,
+      `Priority`, `DueDate`, `ResponsiblePerson`.
 - [ ] **Negativní:** žádný interní název neobsahuje `_x00`.
 - [ ] Sešit `<ini>-mapovaci-matice` v knihovně Documents webu.
 - [ ] Stránka Mapa ISMS publikovaná a v navigaci.
-- [ ] Dva řádky SoA (A.5.31, kap. 6.1.3) s funkčním odkazem v Důkaz.
+- [ ] Dva řádky SoA (A.5.31, kap. 6.1.3) s funkčním odkazem v Důkaz a Stav zavedení `Zavedeno`.
 
 ## Fallback
 

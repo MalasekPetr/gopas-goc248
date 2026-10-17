@@ -43,10 +43,16 @@ proč tato kombinace.*
 | Aplikovatelné = ne (se zdůvodněním) | |
 | Řádky s funkčním odkazem ve sloupci Důkaz | |
 | Řádky s důkazem z Tenant B (odkaz + screenshot) | |
+| Stav zavedení: Zavedeno / Částečně zavedeno / Plánováno / Nezavedeno | / / / |
+
+*Export seznamu SoA je přehled bezpečnostních opatření pro vedení (vyhl. č. 410/2025 Sb.,
+příloha č. 1): přilož ho k reportu; aktualizace alespoň 1× ročně, předložené verze uchovat
+alespoň 4 roky.*
 
 ## 4. Stav zavedení
 
-*Rozděl aplikovatelná opatření do tří skupin. U každého: číslo opatření, capability
+*Rozděl aplikovatelná opatření do tří skupin podle sloupce Stav zavedení v SoA (4.1 Zavedeno,
+4.2 Částečně zavedeno, 4.3 Plánováno a Nezavedeno). U každého: číslo opatření, capability
 Microsoft 365, odkaz na řádek SoA. U navázaných v Compliance Manageru přidej název akce
 `<ini>-...` v assessmentu `<ini>-ISO27001-2022`.*
 
@@ -61,15 +67,15 @@ Microsoft 365, odkaz na řádek SoA. U navázaných v Compliance Manageru přide
 *Typicky: politika v simulaci, CA v režimu report-only, pilot na jedné skupině. Napiš, co
 chybí do plného zavedení.*
 
-| Opatření | Co je hotové | Co chybí | Kdo rozhoduje |
-|---|---|---|---|
-| | | | |
+| Opatření | Co je hotové | Co chybí | Priorita | Termín | Odpovědná osoba |
+|---|---|---|---|---|---|
+| | | | | | |
 
-### 4.3 Nezavedeno
+### 4.3 Plánováno a nezavedeno
 
-| Opatření | Proč | Plán |
-|---|---|---|
-| | | |
+| Opatření | Stav zavedení | Proč | Priorita | Termín | Odpovědná osoba |
+|---|---|---|---|---|---|
+| | Plánováno / Nezavedeno | | | | |
 
 ### 4.4 Stav v Compliance Manageru
 
@@ -83,17 +89,18 @@ chybí do plného zavedení.*
 ## 5. Mezery a co by stály
 
 *Aspoň 3 mezery. U každé: co chybí, dopad, a co by bylo potřeba — licence, práce nebo
-rozhodnutí vedení. Licenci uváděj podle sekce Licence v modulech kurzu, ne odhadem.*
+rozhodnutí vedení. Licenci uváděj podle sekce Licence v modulech kurzu, ne odhadem.
+Prioritu, Termín a Odpovědnou osobu převezmi z řádku SoA.*
 
-| Mezera | Dopad | Potřebná licence | Potřebná práce / rozhodnutí |
-|---|---|---|---|
-| | | *např. Business Premium -> E5 / add-on* | |
+| Mezera | Dopad | Potřebná licence | Potřebná práce / rozhodnutí | Priorita | Termín | Odpovědná osoba |
+|---|---|---|---|---|---|---|
+| | | *např. Business Premium -> E5 / add-on* | | | | |
 
 ## 6. Připravenost na incident
 
 *Z bloku `audit-incident-response`: je postup hlášení? Je záznam v Incident logu
 s podkladem z auditu? Za jak dlouho jste dohledali událost (s datem měření)? Co by
-chybělo pro prvotní hlášení do 24 hodin od vyhodnocení události jako incidentu?*
+chybělo pro prvotní hlášení nejpozději do 24 hodin od zjištění incidentu?*
 
 ## 7. Governance AI
 

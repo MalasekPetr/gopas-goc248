@@ -213,7 +213,8 @@ Do seznamu SoA ve workspace `isms-<ini>` přidej řádky:
 | A.5.33 | ano | vlastní text | retenční štítek označující záznam (`GOC248 ISMS zaznam`, vlastní `<ini>-ISMS záznam`), record versioning | odkaz na zamčený `ZAZ-01` + snímek hlášky z kroku 9.5 | `retention-lifecycle` | A |
 | A.8.10 | ano | vlastní text | retenční politika `<ini>-ISMS retence web`, štítek s disposition review | snímek nastavení politiky a štítku | `retention-lifecycle` | A |
 
-Sloupec **Požadavek** doplň z mapovací matice z pondělí.
+Sloupec **Požadavek** doplň z mapovací matice z pondělí. Vyplň i Stav zavedení, Prioritu,
+Termín a Odpovědnou osobu (u zavedených opatření Termín necháš prázdný).
 
 **Checkpoint:** v SoA jsou dva nové řádky s funkčním odkazem v Důkazu a Modul =
 `retention-lifecycle`.

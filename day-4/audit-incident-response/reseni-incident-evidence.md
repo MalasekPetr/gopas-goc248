@@ -43,7 +43,8 @@ míry **a zároveň** prahu oblastí, **významný dopad = ne**.
 
 Kdy by se to otočilo: dokument obsahuje osobní údaje celé firmy (citlivost 3), odkaz je
 anonymní a audit ukazuje jeho použití zvenku (`AnonymousLinkUsed`), počet dotčených osob
-překročí únosnou míru → významný dopad ano → prvotní hlášení do 24 h, oznámení do 72 h.
+překročí únosnou míru → významný dopad ano → prvotní hlášení do 24 h a oznámení do 72 h,
+obojí od zjištění.
 
 ## Incident log — vzorové hodnoty polí
 
@@ -52,7 +53,7 @@ překročí únosnou míru → významný dopad ano → prvotní hlášení do 2
 | Název | `<ini>-INC-01 Snížení štítku a sdílení řízeného dokumentu` |
 | Zjištěno (DetectedAt) | čas, kdy student záznamy uviděl v kroku 4 |
 | Vyhodnoceno jako incident (ClassifiedAt) | čas rozhodnutí v kroku 6 |
-| Lhůta prvotního hlášení (ReportDeadline) | ClassifiedAt + 1 den (vypočtené) |
+| Lhůta prvotního hlášení (ReportDeadline) | DetectedAt + 1 den (vypočtené) |
 | Významný dopad (Significant) | *ne* (nebo *ano* se zdůvodněním) |
 | Kritérium významnosti (SignificanceBasis) | „Únosná míra újmy nepřekročena (1 dokument, bez ztráty, bez nedostupnosti); nejvyšší oblast citlivost 2–3. Podle § 14 vyhl. 410/2025 Sb. a metodiky Vltava Servis bez významného dopadu." |
 | Dotčená aktiva (AffectedAssets) | aktivum z Asset Registeru pro knihovnu Řízená dokumentace |

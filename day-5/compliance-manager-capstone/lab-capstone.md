@@ -15,7 +15,8 @@ podle šablony a student ho obhájil za 3 minuty.
 
 - Profil prohlížeče pro **Tenant A**, Global Administrator.
 - SoA ve workspace `isms-<ini>` s řádky ze dnů 1–5. Sloupce: Opatření, Požadavek,
-  Aplikovatelné, Zdůvodnění, Capability M365, Důkaz (odkaz), Modul, Tenant.
+  Aplikovatelné, Zdůvodnění, Capability M365, Důkaz (odkaz), Modul, Tenant, Stav zavedení,
+  Priorita, Termín, Odpovědná osoba.
 - Kdo nestihl některý den, doplnil řádky z `reseni-*.md` daného bloku — a v reportu to
   uvede jako nález.
 - Lektor potvrdil: šablona **ISO/IEC 27001:2022** je v tenantu dostupná.
@@ -90,7 +91,7 @@ Pro každý z pěti řádků SoA:
 3. **Evidence** > **Add evidence** > **Link**: název `<ini>-<opatření>-<slug>`, URL = odkaz
    ze sloupce Důkaz v SoA.
 4. **Implementation status**: *Implemented*, *Planned* nebo *Alternative implementation*
-   podle reality. **Edit notes** > datum implementace + poznámka `SoA isms-<ini>, radek <opatreni>`.
+   podle reality — výchozím bodem je sloupec **Stav zavedení** řádku SoA. **Edit notes** > datum implementace + poznámka `SoA isms-<ini>, radek <opatreni>`.
 5. **Save**. **Test status** nech, jak je.
 
 **Checkpoint:** v assessmentu `<ini>-ISO27001-2022` má 5 netechnických improvement actions
@@ -113,8 +114,15 @@ Zkopíruj [`template-report-souladu.md`](template-report-souladu.md) do dokument
 `<ini>-Report-stavu-souladu` ve workspace `isms-<ini>` a vyplň všechny sekce. Každé tvrzení
 o zavedeném opatření má odkaz na řádek SoA nebo na důkaz. Rozsah: 2 strany.
 
+Skupiny v sekci 4 ber ze sloupce **Stav zavedení**, mezery v sekci 5 doplň o Prioritu,
+Termín a Odpovědnou osobu z řádků SoA. Seznam SoA exportuj (**Export** -> **Export to
+CSV**) a ulož soubor do workspace jako přílohu reportu: to je **přehled bezpečnostních opatření**, který se předkládá
+vedení (aktualizace alespoň 1× ročně, verze předložené vedení uchovat alespoň 4 roky —
+vyhl. č. 410/2025 Sb. § 3 odst. 2 a příloha č. 1, podle
+[důvodové zprávy NÚKIB](https://portal.nukib.gov.cz/storage/uploads/2025/12/03/duvodova-zprava-vyhlaska-nizsi-rezim_uid_693039f42250d.pdf)).
+
 **Checkpoint:** report má vyplněné všechny sekce šablony včetně prohlášení o povaze reportu,
-aspoň 3 mezery s licenční poznámkou a aspoň 2 otevřená rizika.
+aspoň 3 mezery s licenční poznámkou a aspoň 2 otevřená rizika. Export SoA je ve workspace.
 
 ### 8. Obhajoba ve trojicích
 
@@ -137,6 +145,9 @@ Posluchači zapíšou ke každé obhajobě jednu otázku, na kterou zazněla sla
 | kap. 9.1 | dle mapovací matice | ano | stav zavedení opatření se měří a vyhodnocuje | Compliance Manager, assessment ISO/IEC 27001:2022, důkazy u improvement actions | odkaz na assessment `<ini>-ISO27001-2022` | `compliance-manager-capstone` | A |
 | A.5.36 | dtto | ano | soulad s politikami a normou se pravidelně ověřuje a reportuje vedení | report stavu souladu nad SoA a assessmentem | odkaz na `<ini>-Report-stavu-souladu` | `compliance-manager-capstone` | A |
 
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný).
+
 **Checkpoint:** v SoA jsou dva nové řádky s Modul = `compliance-manager-capstone` a funkčními
 odkazy.
 
@@ -146,7 +157,8 @@ odkazy.
 - [ ] 5 netechnických improvement actions s odkazem na důkaz ze SoA a stavem implementace.
 - [ ] **Negativní:** žádná technická akce změněná, žádný test status *Passed*, žádná jiná
       šablona aktivovaná, žádný cizí assessment dotčený.
-- [ ] Report `<ini>-Report-stavu-souladu` ve workspace se všemi sekcemi šablony.
+- [ ] Report `<ini>-Report-stavu-souladu` ve workspace se všemi sekcemi šablony; export SoA
+      ve workspace.
 - [ ] Obhajoba ve trojici proběhla.
 - [ ] Dva řádky v SoA.
 

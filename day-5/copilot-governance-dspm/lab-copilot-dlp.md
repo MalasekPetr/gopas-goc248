@@ -135,6 +135,10 @@ Pokud politika zůstala vypnutá kvůli scope (krok 3), zapiš řádek A.8.12 s 
 = ano, Capability „navrženo, nenasazeno — scope na skupinu nebyl v UI k dispozici" a v
 capstonu to uveď jako mezeru.
 
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný). Politika v simulaci nic neblokuje — u A.8.12 je poctivý stav
+`Částečně zavedeno`; vypnutá politika (fallback výše) je `Plánováno`.
+
 **Checkpoint:** v SoA jsou tři nové řádky s Modul = `copilot-governance-dspm` a funkčním
 odkazem ve sloupci Důkaz.
 

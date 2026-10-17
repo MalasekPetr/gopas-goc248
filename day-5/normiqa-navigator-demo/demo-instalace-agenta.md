@@ -17,8 +17,9 @@ a zapisujete jen to, co uvidíte."
 
 ## 1. Listing (5 min)
 
-Otevři listing agenta na Microsoft Marketplace (odkaz doplní lektor v den běhu — v repu
-záměrně není). Nic nekomentuj, jen posouvej stránku a nech studenty vyplnit z listingu
+Otevři listing agenta na Microsoft Marketplace
+([Normiqa Navigator](https://marketplace.microsoft.com/en-us/product/wa200011233?tab=overview)).
+Nic nekomentuj, jen posouvej stránku a nech studenty vyplnit z listingu
 kritéria 1 (vydavatel), 5 (cena) a 6 (podpora, privacy, terms).
 
 **Checkpoint:** studenti mají v sloupci H vyplněná kritéria 1, 5 a 6 s poznámkou „listing".

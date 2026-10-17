@@ -9,7 +9,7 @@ Klíč k [`lab-pravo-vs-norma.md`](lab-pravo-vs-norma.md). Zdroje jsou v README 
 | 1 | Z | vyhl. č. 410/2025 Sb. § 3 odst. 2 a příloha č. 1; aktualizace alespoň 1× ročně |
 | 2 | N | SoA je požadavek ISO/IEC 27001 (kap. 6.1.3); nižší režim chce přehled bezpečnostních opatření |
 | 3 | X | certifikace je dobrovolná a měří proti normě; zákon má vlastní povinnosti (přehled, hlášení, vedení) |
-| 4 | Z | prvotní hlášení do 24 h; nižší režim hlásí jen incidenty s významným dopadem (NÚKIB v1.2) |
+| 4 | Z | prvotní hlášení do 24 h od zjištění (návod NÚKIB pro nižší režim); nižší režim hlásí jen incidenty s významným dopadem (NÚKIB v1.2) |
 | 5 | X | certifikace Microsoftu kryje jeho služby; kontroly uvnitř vlastní organizace posuzuje vlastní auditor (Learn, ISO/IEC 27001 offering) |
 | 6 | Z+N | vyhl. § 3 odst. 3; v ISO politika a řízené dokumentované informace (A.5.1, kap. 7.5) |
 | 7 | Z | § 7 je vyhodnotitelné opatření — nezavedení se odůvodní v přehledu |
@@ -26,5 +26,6 @@ odůvodnění v přehledu bezpečnostních opatření.
 
 Příloha č. 1 chce u opatření v procesu **stav**, **termín zavedení**, **prioritu** a **osobu
 odpovědnou za zavedení**. Klasické SoA má aplikovatelnost a zdůvodnění; plán zavedení patří do
-plánu zvládání rizik. Kurzovní seznam SoA má pevné schéma bez těchto sloupců — viz
+plánu zvládání rizik. Kurzovní seznam SoA proto tyto údaje nese v samostatných sloupcích
+(Stav zavedení, Priorita, Termín, Odpovědná osoba) — viz
 [`../isms-design-m365/`](../isms-design-m365/).

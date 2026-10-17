@@ -1,7 +1,7 @@
 # Lists jako živé evidence a workflow, Skills
 
 > Typ: povinný · Den: 2 · Odhad: 120 min
-> Tenant: A `cloudedu.cz` + B `spdemo.online` · Režim: hands-on, vlastní scope (registry na A); Skills na B hands-on, nebo instruktorské demo podle go/no-go
+> Tenant: A `cloudedu.cz` + B `spdemo.online` · Režim: hands-on, vlastní scope (registry na A); Skills na B instruktorské demo
 > Prostředí: [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 Dokumenty říkají, **jak** má ISMS fungovat. Evidence říkají, **co v něm je**: jaká aktiva
@@ -17,8 +17,8 @@ se termínem. Na tomhle bloku stojí den 4 (Incident log) i capstone (Risk Regis
   a přiřadit mu vlastníka, způsob zvládání a datum revize.
 - Postavit revizní mechanismus bez prémiových konektorů: zobrazení „K revizi" podle data
   a schválení přijetí rizika vlastníkem přes Approvals v seznamu.
-- Vysvětlit, co je **Skill** v Copilot in SharePoint, a vytvořit nebo vidět Skill, který
-  kontroluje náležitosti řízených dokumentů na Tenant B.
+- Vysvětlit, co je **Skill** v Copilot in SharePoint, jakou licenci potřebuje, a navrhnout
+  Skill, který kontroluje náležitosti řízených dokumentů (předvádí lektor na Tenant B).
 - Doložit negativním testem, že Copilot na Tenant B registry z Tenant A nevidí.
 
 ## Výklad
@@ -29,7 +29,7 @@ se termínem. Na tomhle bloku stojí den 4 (Incident log) i capstone (Risk Regis
 |---|---|---|
 | **Asset Register** | co chráníme, kdo to vlastní, jak je to citlivé a kritické | A.5.9 |
 | **Risk Register** | co se může stát kterému aktivu, jak moc to vadí, co s tím děláme a kdy to znovu posoudíme | 6.1, 8.2 |
-| **Incident log** | co se stalo, kdy to bylo vyhodnocené jako incident, do kdy se hlásí | A.5.24 (příprava), naplní D4 |
+| **Incident log** | co se stalo, kdy to bylo zjištěné a vyhodnocené jako incident, do kdy se hlásí | A.5.24 (příprava), naplní D4 |
 | **SoA** (D1) | která opatření platí a čím jsou doložená | 6.1 (prohlášení o aplikovatelnosti) |
 
 Kap. 6.1 normy chce opakovatelný proces posouzení rizik s určeným vlastníkem rizika a plán
@@ -105,8 +105,10 @@ stejně, bez psaní flow.
 > rozbíhá od **2026-09-30**; preview přepínače `KnowledgeAgentScope` v `Set-SPOTenant` se ctí
 > do **2026-11-01**, pak dostupnost řídí **Site AI settings** a Restricted Content Discovery
 > ([Learn: Copilot in SharePoint](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-get-started)).
-> Tenant B má Business Basic a Copilot PAYG **bez** licencí Copilot. Zda tam studenti Skills
-> spustí, rozhodne go/no-go — jinak demo lektora.
+> Tenant B má pro studenty Business Basic a Copilot PAYG **bez** licencí Copilot — Skills
+> tam nespustí (potvrdil autor kurzu, 2026-10). Skill předvádí lektor účtem s licencí
+> Microsoft 365 Copilot. **Autofill columns jdou přes PAYG, Skills ne** — licenční rozdíl,
+> který si student odnáší.
 
 ## Klíčové rozlišení
 
@@ -137,8 +139,8 @@ stejně, bez psaní flow.
 
 - **Tenant A:** tři seznamy ve webu `isms-<ini>` s ASCII adresami `AssetRegister`,
   `RiskRegister`, `IncidentLog`. Approvals zapínáš jen na vlastním `RiskRegister`.
-- **Tenant B:** Skill webu na vlastním `isms-<ini>` nad knihovnou `Dokumentace`. Skill webu
-  vytvoří knihovnu Agent Assets na **tvém** webu — nikde jinde.
+- **Tenant B:** lektor předvádí Skill webu na `isms-lektor` nad knihovnou `Dokumentace` se
+  stejnou vzorovou dokumentací, jakou máš na svém webu.
 - **Data se mezi tenanty nestěhují.** Skill na B nedostane obsah registrů z A a nemá ho dostat.
 
 ## Lab
@@ -146,8 +148,8 @@ stejně, bez psaní flow.
 - [`lab-registry-revize.md`](lab-registry-revize.md) — tři registry a revizní mechanismus
   (Tenant A, ~65 min). Referenční řešení a schémata:
   [`reseni-registry-revize.md`](reseni-registry-revize.md).
-- [`lab-skill-kontrola-dokumentace.md`](lab-skill-kontrola-dokumentace.md) — Skill nad kopií
-  dokumentace (Tenant B, ~25 min, návrat na A kvůli SoA).
+- [`demo-skill-kontrola-dokumentace.md`](demo-skill-kontrola-dokumentace.md) — Skill nad
+  kopií dokumentace (demo lektora na Tenant B, ~15 min; studenti zapisují do SoA na A).
 - Volitelně [`guide-revizni-flow.md`](guide-revizni-flow.md) — plánovaný flow se standardními
   konektory.
 
@@ -155,8 +157,8 @@ stejně, bez psaní flow.
 
 Ve workspace `isms-<ini>` na A přibudou **Asset Register** (5 aktiv), **Risk Register**
 (3 rizika, jedno se schváleným přijetím, jedno po termínu revize) a prázdný **Incident log**
-s jedním cvičným záznamem — přesně v schématu, které den 4 plní a capstone čte. Na B přibude
-Skill webu a seznam nálezů kontroly dokumentace. Viz
+s jedním cvičným záznamem — přesně v schématu, které den 4 plní a capstone čte. Z dema na B
+si student odnese zadání skillu jako návrh kontrolního postupu. Viz
 [`../../scenario-isms-vltava.md`](../../scenario-isms-vltava.md).
 
 | Opatření | Capability M365 | Důkaz |
@@ -164,8 +166,8 @@ Skill webu a seznam nálezů kontroly dokumentace. Viz
 | A.5.9 | Asset Register: aktiva s vlastníkem, klasifikací, kritičností a datem revize | odkaz na `AssetRegister` |
 | kap. 6.1 | Risk Register: aktivum × hrozba, pravděpodobnost × dopad, vlastník, způsob a plán zvládání; přijetí schválené přes Approvals | odkaz na `RiskRegister` |
 | kap. 8.2 | zobrazení „K revizi" podle data příští revize | odkaz na zobrazení `K revizi` |
-| A.5.24 | Incident log s lhůtou prvotního hlášení počítanou od vyhodnocení | odkaz na `IncidentLog` |
-| 7.5 (Tenant B) | Skill webu kontroluje náležitosti řízených dokumentů | odkaz na `SKILL.md` v Agent Assets na B + screenshot |
+| A.5.24 | Incident log s lhůtou prvotního hlášení počítanou od zjištění | odkaz na `IncidentLog` |
+| kap. 7.5 (Tenant B) | Skill webu kontroluje náležitosti řízených dokumentů (vyžaduje licenci Copilot) | odkaz na lektorův `SKILL.md` v Agent Assets na B + zadání skillu |
 
 ## Zdroje
 
@@ -181,7 +183,7 @@ Skill webu a seznam nálezů kontroly dokumentace. Viz
 >
 > - Copilot in SharePoint: GA rollout od 2026-09-30, licence Microsoft 365 Copilot jako
 >   prerekvizita, Copilot Credits pro advanced work, konec `KnowledgeAgentScope` 2026-11-01.
->   Rozhoduje, zda Skills na Tenant B běží hands-on.
+>   Lektorský účet na B musí mít licenci Microsoft 365 Copilot.
 > - Approvals v seznamech: umístění v menu (**Integrate** vs. **Automate** — nápověda uvádí
 >   obojí), licence, chování na Developer tenantu. Uživatelská nápověda je jen na
 >   support.microsoft.com.

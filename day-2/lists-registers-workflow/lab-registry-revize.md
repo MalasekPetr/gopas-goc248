@@ -123,7 +123,7 @@ navazuje:
 | Název | Title | text |
 | Zjištěno | DetectedAt | date+time |
 | Vyhodnoceno jako incident | ClassifiedAt | date+time |
-| Lhůta prvotního hlášení | ReportDeadline | calculated date+time = [ClassifiedAt]+1 |
+| Lhůta prvotního hlášení | ReportDeadline | calculated date+time = [DetectedAt]+1 |
 | Významný dopad | Significant | choice: ano / ne / posuzuje se |
 | Kritérium významnosti | SignificanceBasis | multiline text |
 | Dotčená aktiva | AffectedAssets | lookup (multi) to Asset Register Title |
@@ -131,7 +131,7 @@ navazuje:
 | Podklad pro hlášení | ReportDraft | hyperlink |
 | Důkazy | Evidence | multiline text |
 
-`ReportDeadline`: počítaný sloupec, vzorec `=[ClassifiedAt]+1`, výsledek **Date and Time**
+`ReportDeadline`: počítaný sloupec, vzorec `=[DetectedAt]+1`, výsledek **Date and Time**
 s formátem datum a čas. `AffectedAssets`: vyhledávací sloupec do Asset Register, sloupec
 Název, **povolit více hodnot**.
 
@@ -144,7 +144,8 @@ Přidej záznam: Název `CVICENI - ztraceny notebook`, Zjištěno dnes 08:00, Vy
 incident dnes 10:30, Významný dopad `posuzuje se`, Dotčená aktiva `Notebooky servisních
 techniků`, Stav `Uzavřeno`, do Důkazů „cvičný záznam D2, není incident".
 
-**Checkpoint:** Lhůta prvotního hlášení je **zítra 10:30** (o 24 h později než Vyhodnoceno).
+**Checkpoint:** Lhůta prvotního hlášení je **zítra 08:00** (o 24 h později než Zjištěno —
+ne než Vyhodnoceno).
 Pokud je čas posunutý, zapiš rozdíl a ohlas lektorovi — je to známé riziko počítaných sloupců
 s časovou zónou (viz instructor notes).
 
@@ -179,7 +180,10 @@ tvém Risk Registeru; Asset Register a Incident log je nemají.
 | A.5.9 | ano | vlastní věta | Asset Register: aktiva s vlastníkem, klasifikací, kritičností a datem revize | odkaz na `AssetRegister` | `lists-registers-workflow` | A |
 | kap. 6.1 | ano | vlastní věta, včetně hranice přijatelnosti rizika | Risk Register: aktivum × hrozba, P × D, vlastník, způsob a plán zvládání; přijetí schválené vlastníkem (Approvals) | odkaz na `RiskRegister` | `lists-registers-workflow` | A |
 | kap. 8.2 | ano | vlastní věta: jak často a kdo reviduje | zobrazení `K revizi` podle data příští revize | odkaz na zobrazení `K revizi` | `lists-registers-workflow` | A |
-| A.5.24 | ano | vlastní věta | Incident log s lhůtou prvotního hlášení 24 h od vyhodnocení; naplní D4 | odkaz na `IncidentLog` | `lists-registers-workflow` | A |
+| A.5.24 | ano | vlastní věta | Incident log s lhůtou prvotního hlášení 24 h od zjištění; naplní D4 | odkaz na `IncidentLog` | `lists-registers-workflow` | A |
+
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný).
 
 **Checkpoint:** v `SoA` jsou čtyři nové řádky s Modul = `lists-registers-workflow`, Tenant = A
 a funkčním odkazem v Důkazu.

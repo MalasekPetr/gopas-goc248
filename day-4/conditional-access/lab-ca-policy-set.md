@@ -158,6 +158,9 @@ Tenant = A):
 | A.8.5 | ano | authentication strength MFA, risk-based CA v report-only | odkaz na dokument (výsledky sign-in logu z kroku 8) |
 
 Zdůvodnění piš vlastními slovy; u A.8.5 uveď, co by Vltava Servis bez Entra ID P2 nemohla.
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný). Politiky v report-only nic nevynucují — poctivý stav je
+`Částečně zavedeno` s Termínem přepnutí do vynucení.
 
 **Checkpoint:** v SoA jsou 3 nové řádky s vyplněným sloupcem Důkaz a Modul =
 `conditional-access`.

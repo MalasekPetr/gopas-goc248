@@ -152,6 +152,9 @@ ani odpovědi agenta jako text — jen screenshot jako doklad, že test proběhl
 | A.5.23 | dtto | ano | pravidlo `SME-02` je řízený dokument dostupný přes agenta | agent odpovídá z `SME-02` s citací | odkaz na screenshot odpovědi | `ai-agents-tenant` | B |
 | kap. 9.1 | dtto | ano | kvalita agenta se měří opakovatelně | evaluační sada s očekávaným zdrojem, skóre `x/8` | odkaz na screenshot tabulky | `ai-agents-tenant` | B |
 
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný).
+
 **Checkpoint:** v SoA jsou tři nové řádky s Modul = `ai-agents-tenant`, Tenant = B
 a s funkčním odkazem ve sloupci Důkaz.
 

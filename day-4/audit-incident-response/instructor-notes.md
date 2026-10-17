@@ -32,8 +32,8 @@
 - **„Máme to v auditu, splněno."** Audit je důkaz, ne hlášení.
 - **Všechno je významné** („radši nahlásit"). Pro nižší režim zákon hlásí jen významný dopad;
   dobrovolné hlášení je jiná kategorie. Vyžadovat zdůvodnění, ne strach.
-- **Spor o začátek lhůty** — neřešit právně v učebně; kurz má provozní pravidlo „podklad do
-  24 h od zjištění".
+- **Spor o začátek lhůty** — neřešit právně v učebně; pravidlo kurzu je „24 h od zjištění"
+  (návod NÚKIB 2026-08, konzervativní), `ReportDeadline` = `DetectedAt` + 1 den.
 - **CSV na ploše učebního PC** — osobní údaje mimo tenant. Kontrolovat krok 5.
 - Student chce podklad „zkusmo odeslat" na Portál NÚKIB. Ne.
 

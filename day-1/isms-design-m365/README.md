@@ -75,7 +75,7 @@ tamní bloky.
 
 | Kontejner | Typ | Vzniká | Účel |
 |---|---|---|---|
-| SoA | seznam | dnes | opatření, požadavek, aplikovatelnost, capability, důkaz |
+| SoA | seznam | dnes | opatření, požadavek, aplikovatelnost, capability, důkaz, stav zavedení |
 | Documents (výchozí knihovna) | knihovna | existuje | pracovní podklady návrhu — mapovací matice |
 | Mapa ISMS | stránka | dnes | plán kontejnerů a odkazy na ně |
 | Knihovna řízené dokumentace | knihovna | D2 | politiky a směrnice pod verzováním a schvalováním |
@@ -99,6 +99,10 @@ Na tomto schématu stojí všechny další dny. **Neměnit.**
 | Důkaz | `Evidence` | hypertextový odkaz |
 | Modul | `Module` | jeden řádek textu — slug bloku |
 | Tenant | `Tenant` | volba: `A` / `B` |
+| Stav zavedení | `ImplementationStatus` | volba: `Zavedeno` / `Částečně zavedeno` / `Plánováno` / `Nezavedeno` |
+| Priorita | `Priority` | volba: `Vysoká` / `Střední` / `Nízká` |
+| Termín | `DueDate` | datum (bez času) |
+| Odpovědná osoba | `ResponsiblePerson` | osoba |
 
 **Proč nejdřív ASCII a pak přejmenovat.** Interní název sloupce vzniká jednou, při založení,
 a později ho změnit nejde; mezery a zvláštní znaky se v interním názvu kódují (např. mezera jako
@@ -110,12 +114,14 @@ jako `Requirement`, přejmenovat na „Požadavek". Zobrazovaný název se měn�
 U sloupce **Opatření** se nic nezakládá — přejmenuje se výchozí `Title`, jehož interní název
 zůstane `Title`.
 
-> [!IMPORTANT] SoA v kurzu vs. přehled bezpečnostních opatření
-> Příloha č. 1 vyhlášky č. 410/2025 Sb. chce u opatření v procesu **stav, termín, prioritu
-> a odpovědnou osobu** (viz [`../nis2-iso27001-fundamentals/`](../nis2-iso27001-fundamentals/)).
-> Pevné schéma SoA tyto sloupce nemá: kurz drží ISO pohled (aplikovatelnost, zdůvodnění, důkaz)
-> a zákonný pohled nese sloupec **Požadavek**. V capstonu se z toho stane nález — co by
-> organizace musela doplnit, aby SoA zároveň sloužilo jako přehled bezpečnostních opatření.
+> [!IMPORTANT] Seznam SoA je zároveň přehled bezpečnostních opatření
+> Příloha č. 1 vyhlášky č. 410/2025 Sb. chce u opatření, která ještě nejsou zavedená, **stav,
+> termín, prioritu a odpovědnou osobu** (viz [`../nis2-iso27001-fundamentals/`](../nis2-iso27001-fundamentals/)).
+> Proto má seznam SoA poslední čtyři sloupce: ISO pohled nesou Aplikovatelné, Zdůvodnění
+> a Důkaz, zákonný pohled Požadavek, Stav zavedení, Priorita, Termín a Odpovědná osoba.
+> Export seznamu je přehled, který se předkládá vedení: aktualizace alespoň 1× ročně, verze
+> předložené vedení uchovat alespoň 4 roky (vyhl. č. 410/2025 Sb. § 3 odst. 2 a příloha č. 1 —
+> podle [důvodové zprávy NÚKIB](https://portal.nukib.gov.cz/storage/uploads/2025/12/03/duvodova-zprava-vyhlaska-nizsi-rezim_uid_693039f42250d.pdf)).
 
 ### AI jako pomocník při návrhu — uvnitř hranice, ne mimo ni
 
@@ -153,7 +159,8 @@ Pravidla:
   automatizace a skripty; zobrazovaný je popisek pro lidi.
 - **Komunikační vs. týmový web** — skupina Microsoft 365 ano/ne; v kurzu rozhoduje jediná skupina
   pro řízení přístupu.
-- **SoA vs. přehled bezpečnostních opatření** — viz poznámka výše.
+- **SoA vs. přehled bezpečnostních opatření** — dva různé dokumenty (dobrovolná norma vs.
+  právní povinnost nižšího režimu); kurz je z praktických důvodů vede v jednom seznamu.
 - **AI v tenantu vs. veřejný chatbot** — smluvní rámec a respekt k oprávněním, ne „lepší model".
 
 ## Licence

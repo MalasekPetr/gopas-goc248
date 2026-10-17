@@ -16,10 +16,11 @@ Všechny moduly se odkazují sem.
 | Vyhláška o Portálu NÚKIB | vyhláška č. 334/2025 Sb. | forma a způsob hlášení přes Portál NÚKIB |
 | Národní úřad pro kybernetickou a informační bezpečnost | NÚKIB | dozorový orgán; v režimu nižších povinností se incident hlásí Národnímu CERT (důvodová zpráva k vyhl. č. 410/2025 Sb.), prakticky přes Portál NÚKIB |
 | Režim povinností | vyšší / nižší | rozsah opatření a hlášení; zařazení je látka GOC240 |
-| Prvotní hlášení incidentu | — | bez zbytečného odkladu, **nejpozději do 24 h** od vyhodnocení události jako incidentu; v režimu nižších povinností jen incidenty s významným dopadem ([NÚKIB, Hlášení kybernetických bezpečnostních incidentů, v1.2](https://portal.nukib.gov.cz/storage/uploads/2026/06/08/podpurny-material-ke-hlaseni-incidentu_v1-2_uid_6a267e393778b.pdf)); návod NÚKIB pro nižší režim (2026-08) uvádí „od zjištění" — viz `audit-incident-response`. Závěrečná zpráva do 30 dnů od vyřešení |
+| Prvotní hlášení incidentu | — | bez zbytečného odkladu, **nejpozději do 24 h od zjištění incidentu** (pravidlo kurzu podle [návodu NÚKIB pro nižší režim, 2026-08](https://portal.nukib.gov.cz/informacni-servis/podpurne-materialy/6a1d9256fc2a7b93040173db)); v režimu nižších povinností jen incidenty s významným dopadem ([NÚKIB, Hlášení kybernetických bezpečnostních incidentů, v1.2](https://portal.nukib.gov.cz/storage/uploads/2026/06/08/podpurny-material-ke-hlaseni-incidentu_v1-2_uid_6a267e393778b.pdf) — tam starší formulace „od vyhodnocení události jako incidentu"; viz `audit-incident-response`). Závěrečná zpráva do 30 dnů od vyřešení |
 | ISO/IEC 27001:2022 | ISO 27001 | norma pro ISMS; kap. 4–10 = požadavky na systém řízení, Annex A = katalog opatření |
 | Annex A — témata | A.5–A.8 | A.5 organizační, A.6 lidská, A.7 fyzická, A.8 technologická opatření |
 | Prohlášení o aplikovatelnosti | SoA | které opatření Annex A se aplikují a proč (kap. 6.1.3); **páteř nosné linky kurzu** |
+| Přehled bezpečnostních opatření | — | vyhl. č. 410/2025 Sb., § 3 odst. 2 a příloha č. 1 — u nezavedených opatření stav, termín, priorita, odpovědná osoba; v kurzu tvoří jeden seznam se SoA |
 | Systém řízení bezpečnosti informací | ISMS | aktiva, rizika, opatření, dokumentace, přezkoumání |
 | Dokumentované informace | — | ISO kap. 7.5 — dokumenty a záznamy pod řízením (verze, schválení, přístup, uchování) |
 
@@ -52,7 +53,7 @@ Všechny moduly se odkazují sem.
 | **Microsoft 365 Copilot** | — | AI asistent nad daty tenantu, respektuje oprávnění | D5 |
 | **Declarative agent** | — | agent nad Copilotem: instrukce + zdroje znalostí | `ai-agents-tenant` |
 | **Autofill columns** | součást Syntex / SharePoint Premium | AI vyplní metadata sloupce z obsahu dokumentu | `content-type-hub` (Tenant B) |
-| **Skills (Copilot in SharePoint)** | — | rozšíření Copilota v SharePointu | `lists-registers-workflow` (Tenant B) |
+| **Skills (Copilot in SharePoint)** | — | rozšíření Copilota v SharePointu; vyžaduje licenci Microsoft 365 Copilot | `lists-registers-workflow` (demo lektora, Tenant B) |
 
 > [!IMPORTANT] Názvosloví
 > **DSPM for AI a DSPM -> Data Security Posture Management (DSPM).** Předchozí verze jsou
@@ -87,8 +88,9 @@ Všechny moduly se odkazují sem.
 
 ## Normiqa Navigator
 
-**Normiqa Navigator** — agent produktu **Normiqa** (Malach IS), nabízený přes Microsoft
-Marketplace (dostupnost ověřit před každým během). V kurzu jediný jmenovitý produkt Malach IS, a to jako referenční příklad hotového
+**Normiqa Navigator** — agent produktu **Normiqa** (Malach IS), nabízený přes
+[Microsoft Marketplace](https://marketplace.microsoft.com/en-us/product/wa200011233?tab=overview)
+(dostupnost ověřit před každým během). V kurzu jediný jmenovitý produkt Malach IS, a to jako referenční příklad hotového
 agenta v bloku `normiqa-navigator-demo`. Pravidla neutrality v
 [`CONVENTIONS.md`](./CONVENTIONS.md).
 
@@ -132,7 +134,7 @@ nemá). ⁴ Purview service description (2026-08-03) DSPM samostatně neuvádí.
 | Model | Co platí | Kde v kurzu |
 |---|---|---|
 | **Document processing PAYG** | Autofill columns a další zpracování dokumentů ([Learn: Autofill](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/autofill-overview)); $0,005 za transakci = stránka Word/PDF/TIFF, list, snímek nebo soubor ([Learn: PAYG pricing](https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services)) | `content-type-hub` (Tenant B) |
-| **Copilot PAYG** | Copilot Chat s agenty, SharePoint agents, Retrieval API. Skills jen podle go/no-go — Learn uvádí pro Copilot in SharePoint licenci Microsoft 365 Copilot | `lists-registers-workflow`, D5 (Tenant B) |
+| **Copilot PAYG** | Copilot Chat s agenty, SharePoint agents, Retrieval API. **Ne Skills** — Copilot in SharePoint vyžaduje licenci Microsoft 365 Copilot | D5 (Tenant B) |
 
 Obě metriky jdou přes připojenou Azure subscription, ale jsou to dvě různá nastavení
 a dva různé účty v rozpočtu. Cenu ověřit k datu běhu.

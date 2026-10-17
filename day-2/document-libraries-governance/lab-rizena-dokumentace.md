@@ -148,6 +148,9 @@ mapovací matice z D1, nevymýšlej paragraf):
 | A.5.1 | ano | vlastní věta | politika vydaná schválením vlastníka, autor jiný než schvalovatel | odkaz na `POL-01` (verze 1.0) | `document-libraries-governance` | A |
 | A.5.37 | ano | vlastní věta | postupy dostupné čtenářům (`isms-<ini>-users` Read), upravuje jen autor (Contribute) | odkaz na oprávnění knihovny | `document-libraries-governance` | A |
 
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný).
+
 **Checkpoint:** v `SoA` jsou tři nové řádky s vyplněným sloupcem **Důkaz** (funkční odkaz
 do `ControlledDocs`), **Modul** = `document-libraries-governance` a **Tenant** = A.
 

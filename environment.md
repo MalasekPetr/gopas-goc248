@@ -76,7 +76,7 @@ Kurz proto používá každý tenant na to, co skutečně umí.
 | 1 | `isms-design-m365` | A | S | založení webu `isms-<ini>` |
 | 2 | `document-libraries-governance` | A | S | — |
 | 2 | `content-type-hub` | A + B | S + **T** | Content Type Hub (publikace typu obsahu je tenantová) + sdílené sloupce `VS ISMS` (lektor); na B Autofill (Document processing PAYG) |
-| 2 | `lists-registers-workflow` | A + B | S | na B Skills — jen pokud projde go/no-go, jinak demo lektora |
+| 2 | `lists-registers-workflow` | A + B | S + D | na B Skills jako demo lektora — vyžadují licenci Microsoft 365 Copilot |
 | 3 | `sensitivity-labels` | A | S + **T** | štítky jsou tenantové objekty; label policy scopovaná na vlastní skupinu |
 | 3 | `dlp` | A | S | DLP politika v simulaci na vlastní web |
 | 3 | `retention-lifecycle` | A | S + D | retenční politika na vlastní web; kurzovní záznamový štítek publikovaný lektorem ≥ 7 dní předem; SAM demo jen pokud je na tenantu (vyžaduje licenci Copilot / SAM Plan 1 / E7) |
@@ -133,8 +133,12 @@ Skripty a pořadí jejich spuštění: [`scripts/README.md`](./scripts/README.md
 - [ ] **DLP umístění „Microsoft 365 Copilot and Copilot Chat"** je na tenantu bez Copilota
       dostupné ke konfiguraci (`copilot-governance-dspm`).
 - [ ] **DSPM** — lektor předem projde první nastavení.
-- [ ] **Compliance Manager** — šablona ISO/IEC 27001:2022 dostupná; čítač „Free regulation
-      licenses used" (tenant sdílí SPO_DEV_1; E5 má 3 prémiové šablony); lektorský
+- [ ] **Compliance Manager — sloty prémiových šablon (T−14 dní).** ISO/IEC 27001:2022 i NIS2
+      jsou prémiové; E5 *může* mít až 3 zdarma. Slot se počítá za šablonu na celý tenant,
+      ne za assessment (15 studentů = 1 slot) a drží se rok
+      ([Learn](https://learn.microsoft.com/en-us/purview/compliance-manager-regulations)).
+      Na stránce Regulations zkontrolovat čítač **Regulation licenses used**: volné 2 sloty
+      = OK; jinak spustit **trial** (25 šablon na 90 dní, dostupný do 48 h). Lektorský
       assessment `LEKTOR-ISO27001-2022` připravený.
 - [ ] **Úklid po předchozím běhu** hotový (viz níž).
 
@@ -144,13 +148,15 @@ Skripty a pořadí jejich spuštění: [`scripts/README.md`](./scripts/README.md
 - [ ] **Copilot PAYG** — billing policy připojená ke službě „SharePoint agents", všichni
       `user.NN` ve skupině policy; upozornění na rozpočet nastavené.
 - [ ] **Document processing PAYG** zapnuté; **Autofill columns** dostupné na webech `isms-<ini>`.
-- [ ] **Skills / Copilot in SharePoint** pro účet bez licence Copilot — Learn uvádí licenci
-      Microsoft 365 Copilot. Neprojde-li, Skills jsou demo lektora.
+- [ ] **Lektorský účet na B s licencí Microsoft 365 Copilot** a web `isms-lektor` se vzorovou
+      dokumentací — demo Skills (studentské PAYG účty Skills nespustí; potvrdil autor 2026-10).
 - [ ] **Restricted SharePoint Search vypnuté** (jinak agent nemá SharePoint jako zdroj).
-- [ ] **Agent Builder** — vytvoření a sdílení agenta uživatelem s PAYG ověřené; zapsané
-      hodnoty Agents -> Settings (Sharing, Agent and plugin access, User access).
-- [ ] **Normiqa Navigator** dostupný na Microsoft Marketplace a nainstalovatelný; lektor má
-      roli AI Administrator.
+- [ ] **Agent Builder** — vytvoření agenta uživatelem s PAYG ověřil autor (2026-10); před
+      během zopakovat sdílení *Can chat* a zapsat hodnoty Agents -> Settings (Sharing, Agent
+      and plugin access, User access).
+- [ ] **Normiqa Navigator**
+      ([listing](https://marketplace.microsoft.com/en-us/product/wa200011233?tab=overview))
+      se v prohlížeči otevře a jde na B nainstalovat; lektor má roli AI Administrator.
 - [ ] **`Build-SampleDocs.ps1` skončil `Verify: OK`** a `New-SampleDocsSite.ps1` proběhl;
       namátkou jeden web: 7 dokumentů v `Dokumentace`, student ve skupině vlastníků, žádná
       skupina typu „Everyone"; demo web pro oversharing připravený.

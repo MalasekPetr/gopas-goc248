@@ -28,7 +28,7 @@ Vltava Servis je v **režimu nižších povinností**.
 | Zavést bezpečnostní opatření | 13 oblastí (níže); v režimu nižších povinností nejpozději **do 1 roku** od doručení rozhodnutí o registraci | [NÚKIB Manuál v1.1](https://portal.nukib.gov.cz/storage/uploads/2026/06/02/manual-nizsi-rezim-v1-1_uid_6a1eaedd0ce9f.pdf), kap. 2 | celý týden |
 | Vést přehled bezpečnostních opatření | zavedená (s popisem), plánovaná (termín, priorita, odpovědná osoba), nezavedená (s odůvodněním); aktualizace alespoň 1× ročně; verze předložené vedení uchovat **alespoň 4 roky** | vyhl. č. 410/2025 Sb. § 3 odst. 2 a příloha č. 1 — podle [důvodové zprávy NÚKIB](https://portal.nukib.gov.cz/storage/uploads/2025/12/03/duvodova-zprava-vyhlaska-nizsi-rezim_uid_693039f42250d.pdf) | SoA od `isms-design-m365`, verzování D2, retence D3 |
 | Bezpečnostní politika a dokumentace | obsahově pokrýt oblasti vyhlášky, dodržovat a vynucovat, pravidelně aktualizovat; názvy a počet dokumentů nejsou podstatné | § 3 odst. 3 (tamtéž) | `document-libraries-governance` |
-| Hlásit incidenty | prvotní hlášení **do 24 h**; v režimu nižších povinností jen incidenty s **významným dopadem** (posouzení podle § 14 vyhlášky) | [NÚKIB, hlášení v1.2](https://portal.nukib.gov.cz/storage/uploads/2026/06/08/podpurny-material-ke-hlaseni-incidentu_v1-2_uid_6a267e393778b.pdf) | `audit-incident-response` |
+| Hlásit incidenty | prvotní hlášení **do 24 h od zjištění**; v režimu nižších povinností jen incidenty s **významným dopadem** (posouzení podle § 14 vyhlášky) | [NÚKIB, hlášení v1.2](https://portal.nukib.gov.cz/storage/uploads/2026/06/08/podpurny-material-ke-hlaseni-incidentu_v1-2_uid_6a267e393778b.pdf); začátek lhůty podle [návodu NÚKIB pro nižší režim](https://portal.nukib.gov.cz/informacni-servis/podpurne-materialy/6a1d9256fc2a7b93040173db) | `audit-incident-response` |
 | Zapojit vrcholné vedení | určit osobu pověřenou kybernetickou bezpečností, školení vedení, zdroje, pravidelné seznamování se stavem | § 4 — [NÚKIB Manuál v1.1](https://portal.nukib.gov.cz/storage/uploads/2026/06/02/manual-nizsi-rezim-v1-1_uid_6a1eaedd0ce9f.pdf), kap. 3.2 | capstone (report pro vedení) |
 
 > [!IMPORTANT] Dva režimy, dvě vyhlášky
@@ -90,9 +90,9 @@ Tohle je pro kurz nejdůležitější rozdíl dne.
 Podle důvodové zprávy NÚKIB je přehled pro nižší režim inspirovaný dokumenty režimu vyšších
 povinností (plán zvládání rizik a prohlášení o aplikovatelnosti), ale přiměřeně zredukovaný.
 Kurzovní **seznam SoA** proto nese oba pohledy v jednom řádku: sloupec **Opatření** (Annex A)
-a sloupec **Požadavek** (§ vyhlášky). Co v něm proti příloze č. 1 chybí (stav „v procesu",
-termín, priorita, odpovědná osoba), se ukáže v [`../isms-design-m365/`](../isms-design-m365/)
-a v capstonu.
+a sloupec **Požadavek** (§ vyhlášky); co chce příloha č. 1 navíc (stav zavedení, termín,
+priorita, odpovědná osoba), nesou samostatné sloupce — viz
+[`../isms-design-m365/`](../isms-design-m365/).
 
 ### ISMS v kostce
 
@@ -116,12 +116,19 @@ Podle [podpůrného materiálu NÚKIB v1.2 (2026-06-08)](https://portal.nukib.go
   a u kterého nelze bez zbytečného odkladu, nejpozději do 24 hodin, vyloučit úmyslné zavinění.
 - **Nižší režim hlásí jen incidenty s významným dopadem**; významnost posuzuje sám podle § 14
   vyhlášky č. 410/2025 Sb. Vyšší režim hlásí všechny incidenty splňující znaky.
-- **Prvotní hlášení bez zbytečného odkladu, nejpozději do 24 h** — v praxi od okamžiku, kdy
-  pověřená osoba vyhodnotí zjištěnou událost jako incident.
+- **Prvotní hlášení bez zbytečného odkladu, nejpozději do 24 h.**
 - Hlásí se přes **Portál NÚKIB**; když to není možné, e-mailem nebo datovou schránkou (§ 16
   odst. 4 zákona). Podle důvodové zprávy hlásí nižší režim **Národnímu CERT**.
 - Po vyřešení incidentu s významným dopadem následuje **závěrečná zpráva nejpozději do 30 dnů**.
 - Neohlášení nebo opožděné ohlášení je **přestupek** (materiál odkazuje na § 59 zákona).
+
+**Pravidlo kurzu: 24 h běží od zjištění incidentu** — tak to formuluje
+[návod NÚKIB pro nižší režim](https://portal.nukib.gov.cz/informacni-servis/podpurne-materialy/6a1d9256fc2a7b93040173db)
+(publikováno 14. 8. 2026, „do 24 hodin od jeho zjištění").
+
+> [!WARNING] Starší formulace v materiálu v1.2
+> Podpůrný materiál v1.2 počítá lhůtu „od vyhodnocení události jako incidentu". Kurz drží
+> novější návod, protože je konzervativnější (lhůta začíná dřív).
 
 Proto kurz staví v D4 podklad pro hlášení z toho, co tenant už má: Incident log, audit,
 časová osa ([`../../day-4/audit-incident-response/`](../../day-4/audit-incident-response/)).
@@ -176,6 +183,7 @@ Navazuje [`../requirements-mapping-m365/`](../requirements-mapping-m365/).
 - [Důvodová zpráva k vyhlášce č. 410/2025 Sb. — NÚKIB](https://portal.nukib.gov.cz/storage/uploads/2025/12/03/duvodova-zprava-vyhlaska-nizsi-rezim_uid_693039f42250d.pdf)
 - [Manuál pro poskytovatele regulovaných služeb v režimu nižších povinností, v1.1 — NÚKIB](https://portal.nukib.gov.cz/storage/uploads/2026/06/02/manual-nizsi-rezim-v1-1_uid_6a1eaedd0ce9f.pdf)
 - [Hlášení kybernetických bezpečnostních incidentů, v1.2 — NÚKIB](https://portal.nukib.gov.cz/storage/uploads/2026/06/08/podpurny-material-ke-hlaseni-incidentu_v1-2_uid_6a267e393778b.pdf)
+- [Návod k hlášení incidentů pro nižší režim — NÚKIB](https://portal.nukib.gov.cz/informacni-servis/podpurne-materialy/6a1d9256fc2a7b93040173db)
 - [ISO/IEC 27001 — Microsoft compliance offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001)
 
 ## Stav produktu / delta

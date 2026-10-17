@@ -16,6 +16,8 @@
   šablony bez ukázkového obsahu — **neověřeno na tenantu**, zapsat do labu.
 - Pole **Name** v panelu *Add column* tvoří interní název beze změny a `Field=` v URL nastavení
   sloupce ho ukazuje — **neověřeno na tenantu**; při jiném chování upravit checkpointy 6–8.
+- `Priority` a `DueDate` jsou i názvy vestavěných sloupců webu: ověřit, že nový sloupec seznamu
+  má `Field=Priority` / `Field=DueDate`, ne `Priority0` — **neověřeno na tenantu**.
 - Přidání skupiny zabezpečení `isms-<ini>-users` do *Members* komunikačního webu — **neověřeno
   na tenantu**.
 - **Copy to** z OneDrive na web v témže tenantu — **neověřeno na tenantu**.
@@ -38,4 +40,4 @@
 
 - Zpět: `requirements-mapping-m365` (sešit matice), `onboarding` (skupina, profil).
 - Dopředu: každý blok D2–D5 zapisuje do SoA; `privileged-access-pim` (skupina v Members),
-  `compliance-manager-capstone` (SoA vs. přehled bezpečnostních opatření jako nález).
+  `compliance-manager-capstone` (export SoA = přehled bezpečnostních opatření pro vedení).

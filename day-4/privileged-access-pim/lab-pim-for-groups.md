@@ -142,6 +142,9 @@ Tenant = A):
 | A.5.18 | ano | eligible přiřazení s koncem platnosti, schválení, Resource audit | odkaz na screenshot Resource audit (krok 9) |
 | A.8.2 | ano | JIT vlastnictví webu; návrh rolí s nejmenšími oprávněními | odkaz na dokument Návrh rolí |
 
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný).
+
 **Checkpoint:** v SoA jsou 3 nové řádky s vyplněným sloupcem Důkaz a Modul =
 `privileged-access-pim`.
 

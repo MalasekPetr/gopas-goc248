@@ -5,7 +5,7 @@
 > Prostředí: [`../../environment.md`](../../environment.md) · Názvosloví: [`../../GLOSSARY.md`](../../GLOSSARY.md)
 
 Vedení Vltava Servis zadalo v pondělí tři věci; třetí zněla: **když se něco stane, do 24 hodin
-od vyhodnocení události jako incidentu sestavit prvotní hlášení z podkladů, které tenant už má**
+od zjištění incidentu sestavit prvotní hlášení z podkladů, které tenant už má**
 ([`../../scenario-isms-vltava.md`](../../scenario-isms-vltava.md)). Včera na konci
 [`../../day-3/retention-lifecycle/`](../../day-3/retention-lifecycle/) jste jako `test-<ini>`
 udělali s řízeným dokumentem čtyři věci, které by se dělat neměly. Dnes je najdete, vyhodnotíte
@@ -26,10 +26,10 @@ a připravíte podklad — tak, jak by to musel udělat manažer kybernetické b
 
 ```mermaid
 flowchart LR
-  E[Udalost v tenantu<br/>audit, DLP, Defender,<br/>hlaseni uzivatele] --> V{Vyhodnoceni<br/>udalost nebo incident?}
+  E[Udalost v tenantu<br/>audit, DLP, Defender,<br/>hlaseni uzivatele] --> D[DetectedAt<br/>start lhuty 24 h]
+  D --> V{Vyhodnoceni ClassifiedAt<br/>udalost nebo incident?}
   V -->|udalost| U[Zaznam, dobrovolne<br/>hlaseni mozne]
-  V -->|incident| C[ClassifiedAt<br/>start lhuty 24 h]
-  C --> P{Hlasi se?<br/>rozsah, kyberprostor,<br/>umysl nelze vyloucit,<br/>vyznamny dopad}
+  V -->|incident| P{Hlasi se?<br/>rozsah, kyberprostor,<br/>umysl nelze vyloucit,<br/>vyznamny dopad}
   P -->|ne| R[Incident log<br/>reseni bez hlaseni]
   P -->|ano| H[Prvotni hlaseni<br/>Portal NUKIB do 24 h]
   H --> O[Oznameni do 72 h<br/>od zjisteni]
@@ -133,9 +133,9 @@ Podpůrný materiál NÚKIB *Hlášení kybernetických bezpečnostních inciden
 - V **režimu nižších povinností** se navíc hlásí jen incidenty s **významným dopadem**
   na poskytování regulované služby; významnost si poskytovatel posuzuje sám podle § 14 vyhlášky
   č. 410/2025 Sb.
-- **Prvotní hlášení** bez zbytečného odkladu, **nejpozději do 24 hodin** — v praxi od okamžiku,
-  kdy pověřená osoba (např. manažer kybernetické bezpečnosti) vyhodnotí událost jako incident.
-  Vyhodnocení musí proběhnout co nejrychleji a jde o naplnění definice, ne o subjektivní názor.
+- **Prvotní hlášení** bez zbytečného odkladu, **nejpozději do 24 hodin** (začátek lhůty viz
+  návod níže). Vyhodnocení události jako incidentu musí proběhnout co nejrychleji a jde
+  o naplnění definice, ne o subjektivní názor.
 - Kanál: **Portál NÚKIB**; když není dostupný, e-mail nebo datová schránka podle § 16 odst. 4
   zákona. Portál NÚKIB upravuje vyhláška č. 334/2025 Sb.
   ([`../../GLOSSARY.md`](../../GLOSSARY.md)); její znění v této verzi materiálů ověřené
@@ -145,16 +145,16 @@ Podpůrný materiál NÚKIB *Hlášení kybernetických bezpečnostních inciden
 
 Návod NÚKIB pro nižší režim (publikováno 14. 8. 2026)
 ([Portál NÚKIB](https://portal.nukib.gov.cz/informacni-servis/podpurne-materialy/6a1d9256fc2a7b93040173db))
-doplňuje: u významného incidentu **oznámení do 72 hodin** od zjištění, **závěrečná zpráva do 30
-dnů** od vyřešení; průběžná zpráva na vyžádání nebo když incident trvá déle než 30 dní od
-oznámení. Formulář vyplňuje statutární orgán nebo pověřený zástupce, přihlášení přes Identitu
+uvádí prvotní hlášení **do 24 hodin od zjištění** incidentu — to je **pravidlo kurzu**
+(`ReportDeadline` = `DetectedAt` + 1 den). Dále doplňuje: u významného incidentu **oznámení do
+72 hodin** od zjištění, **závěrečná zpráva do 30 dnů** od vyřešení; průběžná zpráva na
+vyžádání nebo když incident trvá déle než 30 dní od oznámení. Formulář vyplňuje statutární orgán nebo pověřený zástupce, přihlášení přes Identitu
 občana s úrovní záruky značná nebo vysoká.
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-10. Dva materiály NÚKIB, dvě formulace začátku lhůty.
-> Podpůrný materiál (PDF v1.2) počítá 24 h **od vyhodnocení události jako incidentu**. Návod pro
-> nižší režim na Portálu NÚKIB říká „do 24 hodin **od jeho zjištění**". Incident log v kurzu
-> počítá lhůtu podle PDF (`ClassifiedAt` + 1 den). Provozní pravidlo kurzu: **mít podklad hotový
-> do 24 hodin od zjištění** — pak vyhovuje oběma čtením. Znění vyhlášky č. 410/2025 Sb. ověřit
+> Podpůrný materiál (PDF v1.2) počítá 24 h **od vyhodnocení události jako incidentu**. Kurz drží
+> novější návod pro nižší režim („do 24 hodin **od jeho zjištění**"), protože je konzervativnější:
+> lhůta začíná dřív. Znění vyhlášky č. 410/2025 Sb. ověřit
 > na [e-Sbírce](https://e-sbirka.gov.cz/) (v této verzi materiálů ověřeno jen
 > prostřednictvím materiálů NÚKIB).
 
@@ -184,7 +184,7 @@ lab nevytváří — použije vzorovou tabulku v šabloně a výslovně ji ozna�
   ten s významným dopadem.
 - **Incident v Defenderu vs. incident podle zákona** — technický kontejner vs. právní pojem.
 - **Zjištění vs. vyhodnocení** — dva časy, dvě pole v Incident logu (`DetectedAt`,
-  `ClassifiedAt`); spor o začátek lhůty se řeší tím, že vyhodnocení nečeká.
+  `ClassifiedAt`); lhůta 24 h běží od zjištění, vyhodnocení ji neposouvá.
 - **Audit (Standard) vs. (Premium)** — stejné události, jiná retence a analytika; ne „víc
   logování".
 

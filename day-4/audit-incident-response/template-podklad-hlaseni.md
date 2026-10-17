@@ -14,7 +14,8 @@ Sb., vyhláška č. 410/2025 Sb.). Používá se v labu
 > [!WARNING] Ověřit k datu běhu — stav k 2026-08 (část B), 2026-02 a 2026-06 (část A).
 > Pole formuláře vycházejí z
 > [Návodu k hlášení incidentů pro nižší režim](https://portal.nukib.gov.cz/informacni-servis/podpurne-materialy/6a1d9256fc2a7b93040173db)
-> (NÚKIB, publikováno 14. 8. 2026). Lhůty a podmínky z
+> (NÚKIB, publikováno 14. 8. 2026), odtud i začátek 24h lhůty (od zjištění).
+> Ostatní lhůty a podmínky z
 > [Hlášení kybernetických bezpečnostních incidentů, v1.2](https://portal.nukib.gov.cz/storage/uploads/2026/06/08/podpurny-material-ke-hlaseni-incidentu_v1-2_uid_6a267e393778b.pdf),
 > posouzení významnosti z
 > [Stanovení významnosti incidentu v režimu nižších povinností, v1.0](https://portal.nukib.gov.cz/storage/uploads/2026/02/24/vyznamnost-incidentu-nizsi-rezim_uid_699dada722caf.pdf).
@@ -47,15 +48,15 @@ Uvádět **místní čas i UTC** — audit Microsoft Purview pracuje v UTC.
 | Výskyt (první známá akce) | | | export auditu |
 | Zjištění (`DetectedAt`) | | | kdo a čím zjistil |
 | Vyhodnocení jako incident (`ClassifiedAt`) | | | rozhodnutí v A3 |
-| Lhůta prvotního hlášení (`ReportDeadline`) | | | `ClassifiedAt` + 24 h |
-| Konzervativní cíl: podklad hotový | | | `DetectedAt` + 24 h |
+| Lhůta prvotního hlášení (`ReportDeadline`) | | | `DetectedAt` + 24 h |
 | Oznámení (jen významný incident) | | | do 72 h od zjištění |
 | Závěrečná zpráva (jen významný incident) | | | do 30 dnů od vyřešení |
 
 > [!WARNING] Začátek 24h lhůty
-> Podpůrný materiál NÚKIB (v1.2) počítá lhůtu od **vyhodnocení události jako incidentu**; návod
-> pro nižší režim uvádí „od jeho **zjištění**". Proto dva řádky výše. Vyhodnocení nesmí čekat —
-> materiál výslovně říká, že má proběhnout co nejrychleji.
+> Šablona počítá lhůtu **od zjištění** podle návodu NÚKIB pro nižší režim („od jeho
+> **zjištění**"). Podpůrný materiál NÚKIB (v1.2) uvádí „od **vyhodnocení události jako
+> incidentu**" — čtení od zjištění je konzervativnější. Vyhodnocení nesmí čekat — materiál
+> výslovně říká, že má proběhnout co nejrychleji.
 
 ### A3. Událost, nebo incident?
 

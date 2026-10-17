@@ -20,8 +20,8 @@ Vedení zadalo tři věci:
    pod verzováním, schvalováním a retencí, ne v souborech na disku ředitele IT.
 2. **Doložitelnost** — ke každému opatření umět ukázat, čím je v tenantu zavedené a kde je
    důkaz. Auditor ani NÚKIB nechtějí slyšet „máme to nastavené".
-3. **Postup pro incident** — když se něco stane, do 24 hodin od vyhodnocení události jako
-   incidentu sestavit prvotní hlášení z podkladů, které tenant už má.
+3. **Postup pro incident** — když se něco stane, do 24 hodin od zjištění incidentu
+   sestavit prvotní hlášení z podkladů, které tenant už má.
 
 Podmínka, která se táhne celým týdnem: **data firmy zůstávají v tenantu firmy.** Žádný
 veřejný chatbot, žádný export registrů mimo Microsoft 365.
@@ -41,11 +41,18 @@ jako seznam. Každý blok do SoA zapíše řádky ve tvaru:
 | Důkaz | odkaz na konfiguraci, dokument nebo záznam v workspace |
 | Modul | slug bloku, ve kterém řádek vznikl |
 | Tenant | A / B — kde důkaz vznikl |
+| Stav zavedení | Zavedeno / Částečně zavedeno / Plánováno / Nezavedeno — přehled bezpečnostních opatření podle přílohy č. 1 vyhl. č. 410/2025 Sb. |
+| Priorita | Vysoká / Střední / Nízká |
+| Termín | datum zavedení; u zavedených opatření prázdné |
+| Odpovědná osoba | osoba odpovědná za zavedení |
+
+Export seznamu SoA je zároveň **přehled bezpečnostních opatření** pro vedení — jeden seznam,
+dva dokumenty (SoA podle ISO kap. 6.1.3 a přehled podle vyhlášky).
 
 | Den | Co přibude ve workspace | Řádky SoA (opatření ISO) | Moduly |
 |---|---|---|---|
 | 1 | web `isms-<ini>`, informační architektura, mapovací matice, seznam SoA | A.5.31, kap. 6.1.3 | `requirements-mapping-m365`, `isms-design-m365` |
-| 2 | knihovna řízené dokumentace se schvalováním, typy obsahu Politika a Záznam, Asset Register, Risk Register, Incident log; na Tenant B Autofill a Skills nad kopií dokumentace | A.5.1, A.5.9, A.5.24, A.5.37, kap. 7.5, 6.1, 8.2 | `document-libraries-governance`, `content-type-hub`, `lists-registers-workflow` |
+| 2 | knihovna řízené dokumentace se schvalováním, typy obsahu Politika a Záznam, Asset Register, Risk Register, Incident log; na Tenant B Autofill nad kopií dokumentace (Skills jako demo lektora) | A.5.1, A.5.9, A.5.24, A.5.37, kap. 7.5, 6.1, 8.2 | `document-libraries-governance`, `content-type-hub`, `lists-registers-workflow` |
 | 3 | štítky na knihovně, DLP politika v simulaci, retenční politika pro záznamy | A.5.12, A.5.13, A.8.12, A.5.33, A.8.10 | `sensitivity-labels`, `dlp`, `retention-lifecycle` |
 | 4 | CA politiky pro vlastní skupinu, PIM pro vlastní skupinu, záznam incidentu s podkladem z auditu | A.5.15, A.5.17, A.5.18, A.8.2, A.8.5, A.8.15, A.8.16, A.5.24–A.5.26, A.5.28 | `conditional-access`, `privileged-access-pim`, `audit-incident-response` |
 | 5 | agent nad kopií dokumentace (B), politiky pro Copilot (A), důkazy v assessmentu Compliance Manageru, report | A.5.23, A.8.12, A.5.12, A.5.36, kap. 9.1 | `ai-agents-tenant`, `copilot-governance-dspm`, `compliance-manager-capstone` |
@@ -101,7 +108,8 @@ Schémata seznamů jsou závazně v referenčních řešeních labů
 - **Hlavní kopie je na Tenant A.** SoA, registry a knihovna žijí jen tam.
 - **Na Tenant B je sesterský web** `isms-<ini>` s kopií řízené dokumentace Vltava Servis.
   Založí ho skript z fiktivních vzorových dokumentů v repu — **nic se nekopíruje z Tenant A**.
-  Slouží jen tomu, co Tenant A nemá: Autofill columns, Skills a agentům.
+  Slouží jen tomu, co Tenant A nemá: Autofill columns a agentům (Skills předvádí lektor
+  účtem s licencí Copilot na svém webu `isms-lektor`).
 - **Výsledky z Tenant B se do SoA dokládají odkazem a screenshotem**, ne přenosem dat.
   Mezi tenanty se nestěhují žádná data — i to je teaching point datové hranice.
 

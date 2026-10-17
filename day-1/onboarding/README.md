@@ -107,7 +107,7 @@ AI není páteční přívěsek — je to nit, na které se ukazuje **datová hr
 |---|---|---|---|
 | 1 | [`../isms-design-m365/`](../isms-design-m365/) | AI jako **pomocník při návrhu** — rozdíl mezi asistentem uvnitř tenantu a veřejným chatbotem; případná ukázka lektora | B (demo) |
 | 2 | [`../../day-2/content-type-hub/`](../../day-2/content-type-hub/) | **Autofill columns** vyplní metadata dokumentu z jeho obsahu | B |
-| 2 | [`../../day-2/lists-registers-workflow/`](../../day-2/lists-registers-workflow/) | **Skills** v Copilotu nad registry | B |
+| 2 | [`../../day-2/lists-registers-workflow/`](../../day-2/lists-registers-workflow/) | **Skills** v Copilot in SharePoint nad dokumentací — vyžadují licenci Copilot | B (demo) |
 | 5 | [`../../day-5/ai-agents-tenant/`](../../day-5/ai-agents-tenant/) | vlastní **declarative agent** nad kopií ISMS dokumentace | B |
 | 5 | demo lektora v D5 | hotový agent z Microsoft Marketplace — hodnocení stejnými kritérii jako jakýkoli jiný | B (demo) |
 | 5 | [`../../day-5/copilot-governance-dspm/`](../../day-5/copilot-governance-dspm/) | **governance**: DLP a štítky pro Copilot, DSPM | A + B |

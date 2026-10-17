@@ -104,7 +104,7 @@ vlastní agent šetří hodnocení dodavatele, ale přidává údržbu.
 |---|---|---|---|---|
 | Správa agentů v Microsoft 365 admin center (registr, nastavení) | ? | ? | ? | [Manage agents in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps) — „enabled by default in all Microsoft Copilot licensed tenants"; bez Copilota neověřeno |
 | Použití agenta uživatelem | podle schopností agenta: web / instrukce v Copilot Chat; data tenantu s licencí Copilot nebo PAYG | totéž | totéž | [Agent capabilities and licensing](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites) |
-| Cena samotného agenta | podle listingu vydavatele | totéž | totéž | listing (lektor doplní) |
+| Cena samotného agenta | podle listingu vydavatele | totéž | totéž | [listing na Marketplace](https://marketplace.microsoft.com/en-us/product/wa200011233?tab=overview) |
 
 ## Naše prostředí
 
@@ -113,8 +113,10 @@ vlastní agent šetří hodnocení dodavatele, ale přidává údržbu.
 - Studenti v profilu pro B sledují projekci a vyplňují
   [`template-hodnoceni-agenta.md`](template-hodnoceni-agenta.md) — **dvakrát**: pro hotového
   agenta a pro svého agenta z bloku `ai-agents-tenant`.
-- Odkaz na listing doplní lektor v den běhu. V repu není — existence listingu je otevřená
-  go/no-go položka v [`../../environment.md`](../../environment.md).
+- Listing:
+  [Normiqa Navigator na Microsoft Marketplace](https://marketplace.microsoft.com/en-us/product/wa200011233?tab=overview).
+  Dostupnost a instalovatelnost je go/no-go položka v
+  [`../../environment.md`](../../environment.md).
 
 ## Lab
 
@@ -146,8 +148,7 @@ s dodavateli) — návrh, ne povinnost bloku.
 ## Stav produktu / delta
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-10.
-> **Listing Normiqa Navigator na Microsoft Marketplace nebyl při přípravě (2026-10-17)
-> ověřen** — vyhledávání ho nenašlo a Marketplace na automatizovaný dotaz vrací HTTP 403.
-> Lektor ověří v prohlížeči a doplní odkaz v den běhu; bez listingu běží blok jako
-> srovnávací tabulka (kompresní ventil 1). Názvy v admin center (*Agents*, *Registry*,
-> *Agent and plugin access*) se mění po měsících.
+> **Odkaz na listing dodal autor kurzu (2026-10-17)**; automatizovaně ověřit nejde —
+> Marketplace na automatizovaný dotaz vrací HTTP 403. Lektor před během otevře listing
+> v prohlížeči; když není dostupný, blok běží jako srovnávací tabulka (kompresní ventil 1).
+> Názvy v admin center (*Agents*, *Registry*, *Agent and plugin access*) se mění po měsících.

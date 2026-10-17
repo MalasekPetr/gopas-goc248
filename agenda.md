@@ -40,7 +40,7 @@ Motiv: **od zákona k prázdné kostře ISMS v tenantu.**
 Celkem **300 min**.
 
 > [!NOTE] Přihlášení do Tenant B už v pondělí
-> Na Tenant B se poprvé sahá v úterý (Autofill columns, Skills). Registrace MFA na druhém
+> Na Tenant B se poprvé sahá v úterý (Autofill columns). Registrace MFA na druhém
 > tenantu uprostřed labu stojí 15 minut a celou skupinu — proto patří do `onboarding`.
 
 ## Den 2 — Řízená ISMS dokumentace v SharePoint Online a Lists
@@ -111,8 +111,8 @@ povinností (−15); 2. licenční matice v `requirements-mapping-m365` jako hot
 k přečtení, bez společného vyplňování (−15).
 **Nekrátit** `isms-design-m365` — workspace a kostra SoA nesou celý týden.
 
-**Den 2** — 1. Autofill columns v `content-type-hub` jako demo lektora (−20); 2. Skills
-v `lists-registers-workflow` jako demo lektora (−15).
+**Den 2** — 1. Autofill columns v `content-type-hub` jako demo lektora (−20); 2. demo
+Skills v `lists-registers-workflow` jen běh skillu a zápis do SoA (−10).
 **Nekrátit** registry v `lists-registers-workflow` — Risk Register a Incident log používá den 4
 i capstone.
 

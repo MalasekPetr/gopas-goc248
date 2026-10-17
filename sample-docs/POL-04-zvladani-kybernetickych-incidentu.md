@@ -30,15 +30,16 @@ Sám nic nemaže a nevypíná, pokud mu to manažer kybernetické bezpečnosti n
 
 ## Vyhodnocení
 
-Manažer kybernetické bezpečnosti každou nahlášenou událost zapíše do Incident logu,
-vyhodnotí, zda jde o kybernetický bezpečnostní incident, a zapíše čas tohoto vyhodnocení.
+Manažer kybernetické bezpečnosti každou nahlášenou událost zapíše do Incident logu
+i s časem jejího zjištění, vyhodnotí, zda jde o kybernetický bezpečnostní incident, a zapíše
+čas tohoto vyhodnocení.
 U incidentu posoudí, zda má významný dopad, a zapíše kritérium, podle kterého rozhodl.
 
 ## Hlášení incidentu NÚKIB
 
 - Hlásí se jen incidenty s významným dopadem.
-- Prvotní hlášení se podává bez zbytečného odkladu, nejpozději do 24 hodin od vyhodnocení
-  události jako incidentu.
+- Prvotní hlášení se podává bez zbytečného odkladu, nejpozději do 24 hodin od zjištění
+  incidentu.
 - Hlášení podává manažer kybernetické bezpečnosti přes Portál NÚKIB.
 - Podklad pro hlášení se sestavuje z evidence v Incident logu a ze záznamů auditu.
 

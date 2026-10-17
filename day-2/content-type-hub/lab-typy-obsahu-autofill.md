@@ -182,6 +182,9 @@ obrázek ukazuje (adresy, jména) — na kurzovním tenantu to nevadí, v praxi 
 | kap. 7.5 | ano | vlastní věta | typy obsahu Politika / Směrnice / Záznam s povinnými metadaty (hub, nebo lokální `L-*`) | odkaz na typy obsahu knihovny `ControlledDocs` | `content-type-hub` | A |
 | kap. 7.5 | ano | vlastní věta, včetně jedné chyby Autofill z kroku 9 | Autofill columns navrhují typ, vlastníka a datum revize; člověk ověřuje | odkaz na knihovnu `Dokumentace` na Tenant B + screenshot v příloze | `content-type-hub` | B |
 
+Vyplň i Stav zavedení, Prioritu, Termín a Odpovědnou osobu (u zavedených opatření Termín
+necháš prázdný).
+
 **Checkpoint:** v `SoA` jsou dva nové řádky 7.5 s Modul = `content-type-hub`, jeden s Tenant A,
 jeden s Tenant B a přílohou.
 

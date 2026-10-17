@@ -115,7 +115,9 @@ Do seznamu SoA ve workspace `isms-<ini>` přidej řádek:
 |---|---|---|---|---|---|---|
 | A.8.12 | ano | vlastní text (vč. „v simulaci, plán vynucení") | Purview DLP, politika `<ini>-DLP-ISMS-osobni-udaje` (SharePoint, podmínka štítek nebo rodné číslo) | snímek nastavení politiky + snímek Simulation overview v knihovně důkazů | `dlp` | A |
 
-Sloupec **Požadavek** doplň z mapovací matice z pondělí.
+Sloupec **Požadavek** doplň z mapovací matice z pondělí. Vyplň i Stav zavedení, Prioritu,
+Termín a Odpovědnou osobu (u zavedených opatření Termín necháš prázdný). Politika
+v simulaci nic neblokuje — poctivý stav je `Částečně zavedeno` s Termínem přepnutí do vynucení.
 
 **Checkpoint:** v SoA je řádek A.8.12 s funkčním odkazem v Důkazu a Modul = `dlp`.
 

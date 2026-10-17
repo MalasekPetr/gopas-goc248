@@ -9,9 +9,9 @@
 
 ## Go/no-go — otestovat před během
 
-- **Listing existuje a je veřejný** — otevřít v prohlížeči (automatizovaný dotaz vrací 403).
-  Při přípravě 2026-10-17 listing **nenalezen**; odkaz doplnit do lektorského souboru,
-  ne do repa. Bez listingu = ventil 1.
+- **Listing je veřejný** — otevřít v prohlížeči (automatizovaný dotaz vrací 403):
+  `marketplace.microsoft.com/en-us/product/wa200011233` (odkaz v README). Bez listingu =
+  ventil 1.
 - **Agent jde na B nainstalovat** lektorským účtem — Agent Store nebo nasazení v registru
   jen na lektora. **Neověřeno na tenantu.**
 - **Nastavení na B**: *Agent and plugin access* (externí vydavatelé), *User access*.

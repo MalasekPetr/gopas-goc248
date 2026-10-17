@@ -44,7 +44,7 @@ Proč takhle — tři body k tabuli:
 | 1 | Kdo schvaluje Politiku bezpečnosti informací a jak často se přezkoumává? | `POL-01` | schvalovatele a interval přezkumu podle dokumentu | lookup |
 | 2 | Jak dlouho smí mít externí dodavatel přístup do našich systémů a kdo ho schvaluje? | `POL-02` | maximální dobu přístupu a schvalovací roli podle dokumentu | lookup |
 | 3 | Jaké stupně klasifikace informací používáme? | `POL-03` | úplný výčet stupňů v pořadí z dokumentu | výčet |
-| 4 | Do kdy musíme podat prvotní hlášení kybernetického incidentu NÚKIB? | `POL-04` | lhůtu a od kdy běží (od vyhodnocení události jako incidentu) | lookup |
+| 4 | Do kdy musíme podat prvotní hlášení kybernetického incidentu NÚKIB? | `POL-04` | lhůtu a od kdy běží (nejpozději do 24 hodin od zjištění incidentu) | lookup |
 | 5 | Komu mám hlásit podezření na bezpečnostní incident? | `POL-04` | roli a kontaktní kanál podle dokumentu | lookup |
 | 6 | Jak často testujeme obnovu ze zálohy? | `SME-01` | frekvenci testu obnovy a kdo test dokládá | lookup |
 | 7 | Smím vložit smlouvu se zákazníkem do veřejného AI chatbota? | `SME-02` | ne + které nástroje jsou povolené + vazba na klasifikaci | pravidlo |

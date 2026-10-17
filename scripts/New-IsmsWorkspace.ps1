@@ -12,7 +12,8 @@
         language English (LCID 1033), owner = the student.
       - Entra security group isms-<ini>-users added to the site's Members group.
       - List SoA (/Lists/SoA): Title renamed to the Czech display name, columns Requirement,
-        Applicable, Justification, Capability, Evidence, Module, Tenant -- created with ASCII
+        Applicable, Justification, Capability, Evidence, Module, Tenant, ImplementationStatus,
+        Priority, DueDate (date only), ResponsiblePerson (person) -- created with ASCII
         internal names, renamed to Czech display names afterwards.
 
     -AfterDay 2 (document-libraries-governance, lists-registers-workflow), in addition:
@@ -24,7 +25,7 @@
       - Lists AssetRegister, RiskRegister, IncidentLog with the binding schemas from
         day-2/lists-registers-workflow/reseni-registry-revize.md: lookups to Asset Register
         (RiskAsset single, AffectedAssets multi), calculated RiskScore =[Likelihood]*[Impact]
-        (Number, 0 decimals) and ReportDeadline =[ClassifiedAt]+1 (Date and Time). Calculated
+        (Number, 0 decimals) and ReportDeadline =[DetectedAt]+1 (Date and Time). Calculated
         columns are created while all names are still ASCII, then everything is renamed.
       - View "K revizi" on the Risk Register (NextReview <= [Today] and RiskStatus not
         Uzavreno, sorted by RiskScore descending).

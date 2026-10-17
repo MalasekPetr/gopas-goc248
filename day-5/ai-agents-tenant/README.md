@@ -174,10 +174,10 @@ a výsledky vyhodnocuje.
 
 > [!WARNING] Ověřit k datu běhu — stav k 2026-10.
 > Že uživatel s Business Basic + PAYG smí v Agent Builderu **vytvořit** agenta se
-> SharePointem jako zdrojem a **nasdílet** ho: Learn popisuje přístup PAYG uživatelů
-> k agentům nad SharePointem, tvorbu v Agent Builderu výslovně nepopisuje. V sesterském
-> kurzu to fungovalo empiricky (2026-07), na tomto kurzu **neověřeno na tenantu**. Popisky
-> Agent Builderu (*Configure*, *Only use specified sources*, *Can chat*) se mění po měsících.
+> SharePointem jako zdrojem: Learn popisuje přístup PAYG uživatelů k agentům nad
+> SharePointem, tvorbu v Agent Builderu výslovně nepopisuje. **Na Tenant B ověřil autor
+> kurzu, že funguje (2026-10).** Popisky Agent Builderu (*Configure*, *Only use specified
+> sources*, *Can chat*) se mění po měsících.
 
 > [!IMPORTANT] Názvosloví
 > Microsoft 365 Copilot -> **Microsoft Copilot**, Microsoft 365 Copilot Chat -> **Microsoft

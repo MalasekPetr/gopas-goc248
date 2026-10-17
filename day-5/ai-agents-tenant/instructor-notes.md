@@ -12,8 +12,9 @@
 ## Go/no-go — otestovat před během
 
 - **Agent Builder pro Business Basic + PAYG**: zkušební účet `user.NN` vytvoří agenta se
-  SharePointem jako zdrojem a nasdílí ho druhému účtu s rolí *Can chat*. Learn tvorbu pro
-  PAYG výslovně nepopisuje — **neověřeno na tenantu**. Když ne: fallback agent lektora.
+  SharePointem jako zdrojem a nasdílí ho druhému účtu s rolí *Can chat*. Tvorba pro PAYG
+  ověřena autorem na B (2026-10); sdílení *Can chat* před během zopakovat. Když ne:
+  fallback agent lektora.
 - **Billing policy připojená ke službě SharePoint agents** a všechny účty `user.NN` ve
   skupině přiřazené k policy (Learn: prerequisites). Bez toho agent zdroj nepoužije.
 - **Restricted SharePoint Search vypnuté** — jinak SharePoint jako zdroj nejde.

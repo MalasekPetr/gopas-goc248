@@ -171,7 +171,8 @@ Do seznamu SoA ve workspace `isms-<ini>` přidej řádky:
 | A.5.12 | ano | vlastní text | taxonomie sensitivity labels (Veřejné → Přísně důvěrné), label policy `<ini>-ISMS label policy` | snímek policy se scope `isms-<ini>-users` v knihovně důkazů | `sensitivity-labels` | A |
 | A.5.13 | ano | vlastní text | výchozí štítek knihovny „Řízená dokumentace", záhlaví ze štítku, kontejnerový štítek webu | odkaz na označenou `POL-01` + snímek nastavení knihovny | `sensitivity-labels` | A |
 
-Sloupec **Požadavek** doplň z mapovací matice z pondělí.
+Sloupec **Požadavek** doplň z mapovací matice z pondělí. Vyplň i Stav zavedení, Prioritu,
+Termín a Odpovědnou osobu (u zavedených opatření Termín necháš prázdný).
 
 **Checkpoint:** v SoA jsou dva nové řádky s vyplněným sloupcem Důkaz (funkční odkaz)
 a Modul = `sensitivity-labels`.

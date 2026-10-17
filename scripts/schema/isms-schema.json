@@ -100,6 +100,37 @@
             "B"
           ],
           "default": "A"
+        },
+        {
+          "name": "ImplementationStatus",
+          "displayName": "Stav zaveden\u00ed",
+          "type": "Choice",
+          "choices": [
+            "Zavedeno",
+            "\u010c\u00e1ste\u010dn\u011b zavedeno",
+            "Pl\u00e1nov\u00e1no",
+            "Nezavedeno"
+          ]
+        },
+        {
+          "name": "Priority",
+          "displayName": "Priorita",
+          "type": "Choice",
+          "choices": [
+            "Vysok\u00e1",
+            "St\u0159edn\u00ed",
+            "N\u00edzk\u00e1"
+          ]
+        },
+        {
+          "name": "DueDate",
+          "displayName": "Term\u00edn",
+          "type": "DateOnly"
+        },
+        {
+          "name": "ResponsiblePerson",
+          "displayName": "Odpov\u011bdn\u00e1 osoba",
+          "type": "User"
         }
       ]
     },
@@ -323,9 +354,9 @@
           "displayName": "Lh\u016fta prvotn\u00edho hl\u00e1\u0161en\u00ed",
           "type": "Calculated",
           "resultType": "DateTime",
-          "formula": "=[ClassifiedAt]+1",
+          "formula": "=[DetectedAt]+1",
           "fieldRefs": [
-            "ClassifiedAt"
+            "DetectedAt"
           ]
         },
         {
